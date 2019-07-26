@@ -1,0 +1,2 @@
+clear @s iron_nugget 32
+give @s stone_pickaxe{display:{Name:'{"translate":"item.minecraft.stone_pickaxe","color":"gray"}'},HideFlags:127,CanDestroy:["oak_planks","yellow_stained_glass","light_blue_stained_glass","obsidian","end_stone","cobweb"],Unbreakable:1}

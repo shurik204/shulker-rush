@@ -1,0 +1,2 @@
+clear @s gold_nugget 8
+give @s iron_pickaxe{display:{Name:'{"translate":"item.minecraft.iron_pickaxe","color":"gray"}'},HideFlags:127,CanDestroy:["oak_planks","yellow_stained_glass","light_blue_stained_glass","obsidian","end_stone","cobweb"],Unbreakable:1}

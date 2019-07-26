@@ -1,0 +1,2 @@
+clear @s minecraft:nether_wart 3
+give @s minecraft:potion{display:{Name:'{"text":"Взрывное зелье (Убивает при использовании)","italic":false}'},Potion:"minecraft:strenght",HideFlags:127,CanDestroy:["oak_planks","yellow_stained_glass","light_blue_stained_glass","obsidian","end_stone","cobweb"]}
