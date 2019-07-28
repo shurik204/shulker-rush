@@ -1,2 +1,2 @@
 clear @s gold_nugget 6
-execute as @s run function game:shop/item/sword/gives3
+execute as @s run function shulker-rushshop/item/sword/gives3
