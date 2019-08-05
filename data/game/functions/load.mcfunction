@@ -13,3 +13,7 @@ scoreboard objectives add deathCount deathCount
 scoreboard objectives add totalKill playerKillCount
 scoreboard objectives add height dummy
 scoreboard objectives add InGame dummy
+
+scoreboard objectives add leaveGame minecraft.custom:minecraft.leave_game
+setworldspawn 997 180 1144
+scoreboard objectives setdisplay sidebar height

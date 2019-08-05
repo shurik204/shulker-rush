@@ -87,35 +87,35 @@ execute store success score @s result run clear @s minecraft:cobweb{shop:true}
 execute if score @s[scores={statCoins1=8..}] result matches 1 run scoreboard players set @s buyID 27
 execute if score @s result matches 1 run scoreboard players set @s clearDetect -1
 
-execute if score @s buyID matches 1 run function shulker-rushshop/buy/1
-execute if score @s buyID matches 2 run function shulker-rushshop/buy/2
-execute if score @s buyID matches 3 run function shulker-rushshop/buy/3
-execute if score @s buyID matches 4 run function shulker-rushshop/buy/4
-execute if score @s buyID matches 5 run function shulker-rushshop/buy/5
+execute if score @s buyID matches 1 run function game:shop/buy/1
+execute if score @s buyID matches 2 run function game:shop/buy/2
+execute if score @s buyID matches 3 run function game:shop/buy/3
+execute if score @s buyID matches 4 run function game:shop/buy/4
+execute if score @s buyID matches 5 run function game:shop/buy/5
 #
-execute if score @s buyID matches 7 run function shulker-rushshop/buy/7
-execute if score @s buyID matches 8 run function shulker-rushshop/buy/8
-execute if score @s buyID matches 9 run function shulker-rushshop/buy/9
+execute if score @s buyID matches 7 run function game:shop/buy/7
+execute if score @s buyID matches 8 run function game:shop/buy/8
+execute if score @s buyID matches 9 run function game:shop/buy/9
 
-execute if score @s buyID matches 10 run function shulker-rushshop/buy/10
-execute if score @s buyID matches 11 run function shulker-rushshop/buy/11
-execute if score @s buyID matches 12 run function shulker-rushshop/buy/12
-execute if score @s buyID matches 13 run function shulker-rushshop/buy/13
-execute if score @s buyID matches 14 run function shulker-rushshop/buy/14
+execute if score @s buyID matches 10 run function game:shop/buy/10
+execute if score @s buyID matches 11 run function game:shop/buy/11
+execute if score @s buyID matches 12 run function game:shop/buy/12
+execute if score @s buyID matches 13 run function game:shop/buy/13
+execute if score @s buyID matches 14 run function game:shop/buy/14
 #
-execute if score @s buyID matches 16 run function shulker-rushshop/buy/16
-execute if score @s buyID matches 17 run function shulker-rushshop/buy/17
-execute if score @s buyID matches 18 run function shulker-rushshop/buy/18
+execute if score @s buyID matches 16 run function game:shop/buy/16
+execute if score @s buyID matches 17 run function game:shop/buy/17
+execute if score @s buyID matches 18 run function game:shop/buy/18
 
-execute if score @s buyID matches 19 run function shulker-rushshop/buy/19
-execute if score @s buyID matches 20 run function shulker-rushshop/buy/20
-execute if score @s buyID matches 21 run function shulker-rushshop/buy/21
-execute if score @s buyID matches 22 run function shulker-rushshop/buy/22
-execute if score @s buyID matches 23 run function shulker-rushshop/buy/23
+execute if score @s buyID matches 19 run function game:shop/buy/19
+execute if score @s buyID matches 20 run function game:shop/buy/20
+execute if score @s buyID matches 21 run function game:shop/buy/21
+execute if score @s buyID matches 22 run function game:shop/buy/22
+execute if score @s buyID matches 23 run function game:shop/buy/23
 #
-execute if score @s buyID matches 25 run function shulker-rushshop/buy/25
-execute if score @s buyID matches 26 run function shulker-rushshop/buy/26
-execute if score @s buyID matches 27 run function shulker-rushshop/buy/27
+execute if score @s buyID matches 25 run function game:shop/buy/25
+execute if score @s buyID matches 26 run function game:shop/buy/26
+execute if score @s buyID matches 27 run function game:shop/buy/27
 execute at @s run playsound minecraft:entity.player.levelup player @s[scores={buyID=1..,clearDetect=-1}] ~ ~ ~ 1 2 1
 tellraw @s[scores={buyID=-1,clearDetect=-1}] {"text":"You don't have enough nuggets to buy this item","color":"red"}
 execute at @s run playsound minecraft:item.shield.break master @s[scores={buyID=-1,clearDetect=-1}] ~ ~ ~ 1 1 1
