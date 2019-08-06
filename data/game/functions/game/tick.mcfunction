@@ -4,6 +4,7 @@ execute as @a[gamemode=!spectator] at @s positioned ~ ~ ~0.2 as @e[type=minecraf
 execute as @a[gamemode=!spectator] at @s positioned ~-0.2 ~ ~ as @e[type=minecraft:shulker,sort=nearest,limit=1,distance=..0.8] at @s if block ~-1 ~-0.8 ~ #game:terracotta if block ~-1 ~ ~ air run tp @s ~-1 ~ ~
 execute as @a[gamemode=!spectator] at @s positioned ~0.2 ~ ~ as @e[type=minecraft:shulker,sort=nearest,limit=1,distance=..0.8] at @s if block ~1 ~-0.8 ~ #game:terracotta if block ~1 ~ ~ air run tp @s ~1 ~ ~
 
+execute as @e[type=area_effect_cloud,tag=gen] at @s positioned ~ ~-1 ~ run function game:game/generator
 #
 execute if entity @a[scores={deathTest=1..}] if entity @a[scores={killTest=1..}] run tellraw @a [{"selector":"@a[limit=1,scores={deathTest=1..}]"},{"text":" был убит игроком ","color":"gold"},{"selector":"@a[limit=1,scores={killTest=1..}]"}]
 execute as @a store result score @s height run data get entity @s Pos[1]
