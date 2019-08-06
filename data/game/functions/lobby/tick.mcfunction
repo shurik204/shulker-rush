@@ -1,10 +1,7 @@
-playsound minecraft:entity.experience_orb.pickup master @a[score_openVillager_min=1] ~ ~ ~ 10000 1
+playsound minecraft:entity.experience_orb.pickup master @a[scores={openVillager=1..}] ~ ~ ~ 10000 1
 
-tag @a add fillEnd
-execute at @e[name=fillEnd,type=area_effect_cloud] positioned ~-10 ~-9 ~-10 run tag @a[dx=20,dy=19,dz=20] remove fillEnd
-execute at @a[tag=fillEnd,scores={placeGlassY=1..}] run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["fill"]}
-execute at @a[tag=fillEnd,scores={placeGlassB=1..}] run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["fill"]}
-execute at @a[tag=fillEnd,scores={placeCobweb=1..}] run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["fill"]}
-execute at @a[tag=fillEnd,scores={placePlanks=1..}] run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["fill"]}
-execute at @a[tag=fillEnd,scores={placeEndStone=1..}] run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["fill"]}
-execute at @a[tag=fillEnd,scores={placeObsidian=1..}] run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["fill"]}
+tellraw @a[x=991,y=180,z=1142,scores={openVillager=1..},r=6] {"text":"You have just joined the Yellow Team!","color":"yellow","bold":"true"}
+team join yellow @a[x=991,y=180,z=1142,scores={openVillager=1..},r=6]
+tellraw @a[x=1003,y=180,z=1142,scores={openVillager=1..},r=6] {"text":"You have just joined the Blue Team!","color":"dark_aqua","bold":"true"}
+team join blue @a[x=1003,y=180,z=1142,scores={openVillager=1..},r=6]
+scoreboard players set @a[scores={openVillager=1..}] openVillager 0

@@ -1,7 +1,7 @@
 #execute at @e[type=minecraft:area_effect_cloud,tag=shop] run data modify block ~ ~ ~ Items set from block ~ ~-4 ~ Items
-function game:shop/update
-execute as @a[tag=InGame] run function game:shop/tick
-function game:game/tick
+execute if score #State var matches 10 function game:shop/update
+execute if score #State var matches 10 as @a[tag=InGame] run function game:shop/tick
+execute if score #State var matches 10 run function game:game/tick
 
 #Welcome msg
 tag @a[scores={leaveGame=1..}] remove Joined
