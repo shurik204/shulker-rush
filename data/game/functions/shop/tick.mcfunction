@@ -116,6 +116,7 @@ execute if score @s buyID matches 23 run function game:shop/buy/23
 execute if score @s buyID matches 25 run function game:shop/buy/25
 execute if score @s buyID matches 26 run function game:shop/buy/26
 execute if score @s buyID matches 27 run function game:shop/buy/27
-execute at @s run playsound minecraft:entity.player.levelup player @s[scores={buyID=1..,clearDetect=-1}] ~ ~ ~ 1 2 1
-tellraw @s[scores={buyID=-1,clearDetect=-1}] {"text":"You don't have enough nuggets to buy this item","color":"red"}
-execute at @s run playsound minecraft:item.shield.break master @s[scores={buyID=-1,clearDetect=-1}] ~ ~ ~ 1 1 1
+
+execute if entity @s[scores={buyID=1..,clearDetect=-1}] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 2 1
+tellraw @s[scores={buyID=-1,clearDetect=-1}] {"text":"У тебя недостаточно ресурсов для покупки","color":"red"}
+execute at @s run playsound minecraft:entity.item.break master @s[scores={buyID=-1,clearDetect=-1}] ~ ~ ~ 1 1 1

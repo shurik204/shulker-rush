@@ -29,4 +29,4 @@ give @s minecraft:cobweb{display:{Name:'{"translate":"block.minecraft.cobweb","c
 
 
 
-#CanPlaceOn:["oak_leaves","spruce_leaves","black_terracotta","lime_terracotta","white_terracotta","red_terracotta","light_gray_terracotta","light_blue_terracotta","cyan_terracotta","green_terracotta","magenta_terracotta","yellow_terracotta","nether_brick_stairs","spruce_stairs","nether_wart_block","oak_fence","spruce_slab","oak_slab","torch","brown_shulker_box","grass","hopper","ender_chest","chest","daylight_detector","light_blue_stained_glass","yellow_stained_glass","end_stone","obsidian","oak_planks","cobweb"]
+#CanPlaceOn:["oak_leaves","spruce_leaves","black_terracotta","lime_terracotta","white_terracotta","red_terracotta","light_gray_terracotta","light_blue_terracotta","cyan_terracotta","green_terracotta","magenta_terracotta","yellow_terracotta","nether_brick_stairs","spruce_stairs","nether_wart_block","oak_fence","spruce_slab","oak_slab","torch","brown_shulker_box","grass","hopper","ender_chest","chest","daylight_detector","#game:stained_glass","end_stone","obsidian","oak_planks","cobweb"]
