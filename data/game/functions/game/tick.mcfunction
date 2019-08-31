@@ -44,6 +44,7 @@ execute as @a[scores={InGame=..0},tag=!Joined] run scoreboard players set @s InG
 #execute as @a[scores={InGame=1..}] unless score @s InGame = #Game InGame run team join player @s
 #execute as @a[scores={InGame=1..}] unless score @s InGame = #Game InGame run scoreboard players set @s InGame 0
 execute as @a[tag=!Joined,scores={InGame=1..}] run effect give @s minecraft:nausea 6 0 true
+team join player @a[team=!player,team=!yellow,team=!blue]
 
 #Fill markers
 tag @a[tag=!fillEnd] add fillEnd

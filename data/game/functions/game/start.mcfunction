@@ -8,6 +8,9 @@ fill 1003 192 1085 1009 188 1079 air
 scoreboard players set @e[tag=Upgrade] statSouls 0
 execute at @e[type=minecraft:area_effect_cloud,tag=Chest] run data merge block ~ ~ ~ {Items:[]}
 
+scoreboard players set @e[type=area_effect_cloud,tag=gen] ironGen 40
+scoreboard players set @e[type=area_effect_cloud,tag=gen] goldGen 40
+scoreboard players set @e[type=area_effect_cloud,tag=RubyGen] rubyGen 1000
 scoreboard players set @e[type=area_effect_cloud,tag=Upgrade] forgeLvl 0
 scoreboard players set @e[type=area_effect_cloud,tag=Upgrade] swordLvl 0
 scoreboard players set @e[type=area_effect_cloud,tag=Upgrade] armorLvl 0
