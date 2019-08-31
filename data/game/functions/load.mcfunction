@@ -24,6 +24,7 @@ scoreboard objectives add InGame dummy
 scoreboard objectives add ironGen dummy
 scoreboard objectives add goldGen dummy
 scoreboard objectives add rubyGen dummy
+scoreboard objectives add drinkPotion minecraft.used:minecraft.potion
 scoreboard objectives add hurt minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add Hurted minecraft.custom:minecraft.damage_taken
 

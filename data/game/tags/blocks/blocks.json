@@ -1,0 +1,10 @@
+{
+    "replace":true,
+    "values":[
+        "#game:stained_glasss",
+        "minecraft:oak_planks",
+        "minecraft:end_stone",
+        "minecraft:obsidian",
+        "minecraft:cobweb"
+    ]
+}

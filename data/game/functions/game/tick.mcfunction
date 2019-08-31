@@ -93,6 +93,10 @@ execute as @a run function game:shop/upgrader/sword
 tag @a[scores={died=0}] remove HasAxe
 execute as @a[nbt={Inventory:[{id:"minecraft:golden_axe"}]}] run tag @s add HasAxe
 
+#Kill potion
+execute as @a[scores={drinkPotion=1..}] at @s run function game:game/kill_potion
+scoreboard players set @a drinkPotion 0
+
 #Fix block drops (ik about Loot Tables, but i cant make it work)
 execute as @e[type=item,tag=!Modded,nbt={Item:{id:"minecraft:end_stone"}}] run data merge entity @s {Item:{id:"minecraft:end_stone",tag:{display:{Name:'{"translate":"block.minecraft.end_stone","italic":false}'},CanPlaceOn:["brown_terracotta","oak_leaves","spruce_leaves","black_terracotta","lime_terracotta","white_terracotta","red_terracotta","light_gray_terracotta","light_blue_terracotta","cyan_terracotta","green_terracotta","magenta_terracotta","yellow_terracotta","nether_brick_stairs","spruce_stairs","nether_wart_block","oak_fence","spruce_slab","oak_slab","torch","brown_shulker_box","grass","hopper","ender_chest","chest","daylight_detector","#game:stained_glass","end_stone","obsidian","oak_planks","cobweb"],HideFlags:127,CanDestroy:["oak_planks","#game:stained_glass","obsidian","end_stone","cobweb"]}},Tags:["Modded"]}
 execute as @e[type=item,tag=!Modded,nbt={Item:{id:"minecraft:oak_planks"}}] run data merge entity @s {Item:{id:"minecraft:oak_planks",tag:{display:{Name:'{"translate":"block.minecraft.oak_planks","italic":false}'},CanPlaceOn:["brown_terracotta","oak_leaves","spruce_leaves","black_terracotta","lime_terracotta","white_terracotta","red_terracotta","light_gray_terracotta","light_blue_terracotta","cyan_terracotta","green_terracotta","magenta_terracotta","yellow_terracotta","nether_brick_stairs","spruce_stairs","nether_wart_block","oak_fence","spruce_slab","oak_slab","torch","brown_shulker_box","grass","hopper","ender_chest","chest","daylight_detector","#game:stained_glass","end_stone","obsidian","oak_planks","cobweb"],HideFlags:127,CanDestroy:["oak_planks","#game:stained_glass","obsidian","end_stone","cobweb"]}},Tags:["Modded"]}
