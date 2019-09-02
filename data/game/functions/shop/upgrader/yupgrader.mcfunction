@@ -5,8 +5,8 @@ execute store success score @s result run clear @s minecraft:emerald{U:1}
 execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 1.. run scoreboard players set @s buyID 1
 execute if score @s result matches 1 run scoreboard players set @s clearDetect -1
 execute store success score @s result run clear @s minecraft:golden_carrot{U:1}
-execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] effectLvl matches 0 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 4.. run scoreboard players set @s buyID 2
-execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] effectLvl matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 5.. run scoreboard players set @s buyID 2
+execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] effectLvl matches 0 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 3.. run scoreboard players set @s buyID 2
+execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] effectLvl matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 4.. run scoreboard players set @s buyID 2
 execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] effectLvl matches 2 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 6.. run scoreboard players set @s buyID 2
 execute if score @s result matches 1 run scoreboard players set @s clearDetect -1
 execute store success score @s result run clear @s minecraft:iron_sword{U:1}
@@ -20,9 +20,9 @@ execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,
 execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] armorLvl matches 2 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 9.. run scoreboard players set @s buyID 4
 execute if score @s result matches 1 run scoreboard players set @s clearDetect -1
 execute store success score @s result run clear @s minecraft:brewing_stand{U:1}
-execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] effectLvl matches 0 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 2.. run scoreboard players set @s buyID 5
-execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] effectLvl matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 5.. run scoreboard players set @s buyID 5
-execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] effectLvl matches 2 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 10.. run scoreboard players set @s buyID 5
+execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] forgeLvl matches 0 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 2.. run scoreboard players set @s buyID 5
+execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] forgeLvl matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 5.. run scoreboard players set @s buyID 5
+execute if score @s result matches 1 if score @e[type=area_effect_cloud,tag=UpY,limit=1] forgeLvl matches 2 if score @e[type=area_effect_cloud,tag=UpY,limit=1] statSouls matches 10.. run scoreboard players set @s buyID 5
 execute if score @s result matches 1 run scoreboard players set @s clearDetect -1
 
 execute as @s[scores={buyID=1..5}] run function game:shop/upgrader/yupgrade

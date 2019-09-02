@@ -13,11 +13,12 @@ execute as @a if score @s deathTest matches 1.. run tag @s add regiveAll
 execute at @e[type=area_effect_cloud,tag=Respawn] as @a[tag=regiveAll,distance=..1] run function game:game/respawn
 
 #Kill controller
-execute if entity @a[scores={deathTest=1..}] if entity @a[scores={killTest=1..}] run tellraw @a [{"selector":"@a[limit=1,scores={deathTest=1..}]"},{"text":" был убит игроком ","color":"gold"},{"selector":"@a[limit=1,scores={killTest=1..}]"}]
 execute as @a store result score @s height run data get entity @s Pos[1]
 execute as @a[scores={InGame=1..}] if score @s height matches ..120 run tag @s add regiveAll
 execute as @a[scores={InGame=1..}] if score @s height matches ..120 run kill @s
-tellraw @a[scores={killTest=1..},team=!player] {"text":"+1 Душа","color":"aqua"}
+execute if entity @a[scores={deathTest=1..}] if entity @a[scores={killTest=1..}] run tellraw @a [{"selector":"@a[limit=1,scores={deathTest=1..}]"},{"text":" был убит игроком ","color":"gold"},{"selector":"@a[limit=1,scores={killTest=1..}]"}]
+execute as @a[scores={killTest=1..},team=yellow] run tellraw @a[team=yellow] {"text":"+1 Душа","color":"aqua"}
+execute as @a[scores={killTest=1..},team=blue] run tellraw @a[team=blue] {"text":"+1 Душа","color":"aqua"}
 gamemode spectator @s[tag=eleminated,scores={deathTest=1..}]
 
 execute as @a[tag=eleminated,scores={deathTest=1..}] run tellraw @a [{"selector":"@s"},{"text":" выбывает из игры","color":"red"}]
@@ -87,7 +88,6 @@ execute as @a[team=yellow] run scoreboard players operation @s swordLvl = @e[typ
 execute as @a[team=yellow] run scoreboard players operation @s armorLvl = @e[type=area_effect_cloud,tag=UpY,limit=1] armorLvl
 execute as @a[team=blue] run scoreboard players operation @s swordLvl = @e[type=area_effect_cloud,tag=UpB,limit=1] swordLvl
 execute as @a[team=blue] run scoreboard players operation @s armorLvl = @e[type=area_effect_cloud,tag=UpB,limit=1] armorLvl
-scoreboard players operation @e[type=area_effect_cloud,tag=BlueBed,limit=1] effectLvl = @e[type=area_effect_cloud,tag=UpB,limit=1] effectLvl
 execute as @a run function game:shop/upgrader/sword
 
 #Axe
@@ -104,10 +104,5 @@ execute as @e[type=item,tag=!Modded,nbt={Item:{id:"minecraft:oak_planks"}}] run 
 execute as @e[type=item,tag=!Modded,nbt={Item:{id:"minecraft:obsidian"}}] run data merge entity @s {Item:{id:"minecraft:obsidian",tag:{display:{Name:'{"translate":"block.minecraft.obsidian","italic":false}'},CanPlaceOn:["brown_terracotta","oak_leaves","spruce_leaves","black_terracotta","lime_terracotta","white_terracotta","red_terracotta","light_gray_terracotta","light_blue_terracotta","cyan_terracotta","green_terracotta","magenta_terracotta","yellow_terracotta","nether_brick_stairs","spruce_stairs","nether_wart_block","oak_fence","spruce_slab","oak_slab","torch","brown_shulker_box","grass","hopper","ender_chest","chest","daylight_detector","#game:stained_glass","end_stone","obsidian","oak_planks","cobweb"],HideFlags:127,CanDestroy:["oak_planks","#game:stained_glass","obsidian","end_stone","cobweb"]}},Tags:["Modded"]}
 execute as @e[type=item,tag=!Modded,nbt={Item:{id:"minecraft:string"}}] run data merge entity @s {Item:{id:"minecraft:cobweb",tag:{display:{Name:'{"translate":"block.minecraft.cobweb","italic":false}'},CanPlaceOn:["brown_terracotta","oak_leaves","spruce_leaves","black_terracotta","lime_terracotta","white_terracotta","red_terracotta","light_gray_terracotta","light_blue_terracotta","cyan_terracotta","green_terracotta","magenta_terracotta","yellow_terracotta","nether_brick_stairs","spruce_stairs","nether_wart_block","oak_fence","spruce_slab","oak_slab","torch","brown_shulker_box","grass","hopper","ender_chest","chest","daylight_detector","#game:stained_glass","end_stone","obsidian","oak_planks","cobweb"],HideFlags:127,CanDestroy:["oak_planks","#game:stained_glass","obsidian","end_stone","cobweb"]}},Tags:["Modded"]}
 
-#Shulker Magic Effects
-execute as @e[type=shulker,scores={effectLvl=1..},tag=YellowBed] at @s run effect give @a[distance=..8,team=blue] minecraft:mining_fatigue 1 0 false
-execute as @e[type=shulker,scores={effectLvl=1..},tag=BlueBed] at @s run effect give @a[distance=..8,team=yellow] minecraft:mining_fatigue 1 0 false
-execute as @e[type=shulker,scores={effectLvl=2..},tag=YellowBed] at @s run effect give @a[distance=..8,team=yellow] minecraft:regeneration 1 0 false
-execute as @e[type=shulker,scores={effectLvl=2..},tag=BlueBed] at @s run effect give @a[distance=..8,team=blue] minecraft:regeneration 1 0 false
-execute as @e[type=shulker,scores={effectLvl=3..},tag=YellowBed] at @s run effect give @a[distance=..18,team=yellow] minecraft:glowing 1 0 false
-execute as @e[type=shulker,scores={effectLvl=3..},tag=BlueBed] at @s run effect give @a[distance=..18,team=blue] minecraft:glowing 1 0 false
+#Magic Effects
+execute as @e[type=area_effect_cloud,tag=Upgrade] run function game:game/effects
