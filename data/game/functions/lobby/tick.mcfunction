@@ -13,6 +13,7 @@ scoreboard players set @a InGame -1
 
 tp @a[tag=!Joined] 997 180.1 1144 -180 0
 clear @a[tag=!Joined]
+team join player @a[tag=!Joined]
 
 execute as @a[scores={openVillager=1..}] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 10000 1
 tellraw @a[x=991,y=180,z=1142,scores={openVillager=1..},distance=..6] {"text":"Ты присоединился к команде Жёлтых!","color":"yellow","bold":false}
@@ -21,5 +22,5 @@ tellraw @a[x=1003,y=180,z=1142,scores={openVillager=1..},distance=..6] {"text":"
 team join blue @a[x=1003,y=180,z=1142,scores={openVillager=1..},distance=..6]
 scoreboard players set @a openVillager 0
 
-execute positioned 997 181 1144 as @a[distance=40..] run tp @s 997 180.1 1144 -180 0
+execute positioned 997 181 1144 as @a[distance=40..,tag=!Dev] run tp @s 997 180.1 1144 -180 0
 spawnpoint @a 997 181 1144

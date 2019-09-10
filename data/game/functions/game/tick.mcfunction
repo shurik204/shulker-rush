@@ -24,8 +24,9 @@ gamemode spectator @s[tag=eleminated,scores={deathTest=1..}]
 execute as @a[tag=eleminated,scores={deathTest=1..}] run tellraw @a [{"selector":"@s"},{"text":" выбывает из игры","color":"red"}]
 execute as @a[tag=eleminated,scores={deathTest=1..}] run gamemode spectator @s
 
-execute at @a[scores={killTest=1..}] as @e[type=item,nbt={Item:{id:"minecraft:yellow_stained_glass"}}] run data modify entity @s Item.id set value "red_stained_glass"
-execute at @a[scores={killTest=1..}] as @e[type=item,nbt={Item:{id:"minecraft:light_blue_stained_glass"}}] run data modify entity @s Item.id set value "red_stained_glass"
+
+execute at @a[scores={deathTest=1..}] as @e[type=item,nbt={Item:{id:"minecraft:yellow_stained_glass"}},distance=..2] run data merge entity @s {Item:{id:"minecraft:red_stained_glass",tag:{display:{Name:''}}}}
+execute at @a[scores={deathTest=1..}] as @e[type=item,nbt={Item:{id:"minecraft:light_blue_stained_glass"}},distance=..2] run data merge entity @s {Item:{id:"minecraft:red_stained_glass",tag:{display:{Name:''}}}}
 execute as @a[scores={killTest=1..},team=yellow] run scoreboard players add @e[type=area_effect_cloud,tag=UpY] statSouls 1
 execute as @a[scores={killTest=1..},team=blue] run scoreboard players add @e[type=area_effect_cloud,tag=UpB] statSouls 1
 scoreboard players set @a deathTest 0
@@ -37,13 +38,17 @@ execute as @a if score @s food matches ..18 run effect give @s minecraft:saturat
 execute as @a[team=yellow] run title @s actionbar [{"text":"Души: ","color":"dark_aqua","bold":true},{"score":{"name":"@e[type=area_effect_cloud,limit=1,tag=UpY]","objective":"statSouls"}},{"text":" | ","color":"gray"},{"text":"Убийств: ","color":"green"},{"score":{"name":"@s","objective":"totalKill"}},{"text":" | ","color":"gray"},{"text":"Смертей: ","color":"red"},{"score":{"name":"@s","objective":"deathCount"}}]
 execute as @a[team=blue] run title @s actionbar [{"text":"Души: ","color":"dark_aqua","bold":true},{"score":{"name":"@e[type=area_effect_cloud,limit=1,tag=UpB]","objective":"statSouls"}},{"text":" | ","color":"gray"},{"text":"Убийств: ","color":"green"},{"score":{"name":"@s","objective":"totalKill"}},{"text":" | ","color":"gray"},{"text":"Смертей: ","color":"red"},{"score":{"name":"@s","objective":"deathCount"}}]
 
-#Give nausea to rejoined players
-execute as @a[scores={InGame=..0},tag=!Joined] run gamemode spectator
-execute as @a[scores={InGame=..0},tag=!Joined] run team join player @s
-execute as @a[scores={InGame=..0},tag=!Joined] run scoreboard players set @s InGame 0
+
+execute as @a[tag=!Joined,team=!yellow,team=!blue] run gamemode spectator
+execute as @a[tag=!Joined,team=!yellow,team=!blue] run team join player @s
+execute as @a[tag=!Joined,team=!yellow,team=!blue] run scoreboard players set @s InGame 0
+
+#It seems to be working, but it doesnt :\ | Maybe problem with start?
 #execute as @a[scores={InGame=1..}] unless score @s InGame = #Game InGame run gamemode spectator
 #execute as @a[scores={InGame=1..}] unless score @s InGame = #Game InGame run team join player @s
 #execute as @a[scores={InGame=1..}] unless score @s InGame = #Game InGame run scoreboard players set @s InGame 0
+
+#Give nausea to rejoined players
 execute as @a[tag=!Joined,scores={InGame=1..}] run effect give @s minecraft:nausea 6 0 true
 team join player @a[team=!player,team=!yellow,team=!blue]
 
@@ -106,3 +111,4 @@ execute as @e[type=item,tag=!Modded,nbt={Item:{id:"minecraft:string"}}] run data
 
 #Magic Effects
 execute as @e[type=area_effect_cloud,tag=Upgrade] run function game:game/effects
+#Created by shurik204 | Teksar Team
