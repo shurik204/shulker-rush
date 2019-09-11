@@ -3,6 +3,7 @@ execute as @e[type=area_effect_cloud,tag=fill] at @s run function game:game/rese
 execute as @a at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 10000 1 1
 kill @e[type=item]
 scoreboard players set #State var 2
+team join player @a
 scoreboard players set @a InGame -1
 tp @a 997 181 1144 180 0
 gamemode adventure @a

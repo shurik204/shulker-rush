@@ -1,8 +1,8 @@
 #Pushing shulker
-execute as @a[gamemode=!spectator] at @s positioned ~ ~ ~-0.2 as @e[type=minecraft:shulker,sort=nearest,limit=1,distance=..0.8] at @s if block ~ ~-0.8 ~-1 #game:terracotta if block ~ ~ ~-1 air run tp @s ~ ~ ~-1
-execute as @a[gamemode=!spectator] at @s positioned ~ ~ ~0.2 as @e[type=minecraft:shulker,sort=nearest,limit=1,distance=..0.8] at @s if block ~ ~-0.8 ~1 #game:terracotta if block ~ ~ ~1 air run tp @s ~ ~ ~1
-execute as @a[gamemode=!spectator] at @s positioned ~-0.2 ~ ~ as @e[type=minecraft:shulker,sort=nearest,limit=1,distance=..0.8] at @s if block ~-1 ~-0.8 ~ #game:terracotta if block ~-1 ~ ~ air run tp @s ~-1 ~ ~
-execute as @a[gamemode=!spectator] at @s positioned ~0.2 ~ ~ as @e[type=minecraft:shulker,sort=nearest,limit=1,distance=..0.8] at @s if block ~1 ~-0.8 ~ #game:terracotta if block ~1 ~ ~ air run tp @s ~1 ~ ~
+# execute as @a[gamemode=!spectator] at @s positioned ~ ~ ~-0.2 as @e[type=minecraft:shulker,sort=nearest,limit=1,distance=..0.8] at @s if block ~ ~-0.8 ~-1 #game:terracotta if block ~ ~ ~-1 air run tp @s ~ ~ ~-1
+# execute as @a[gamemode=!spectator] at @s positioned ~ ~ ~0.2 as @e[type=minecraft:shulker,sort=nearest,limit=1,distance=..0.8] at @s if block ~ ~-0.8 ~1 #game:terracotta if block ~ ~ ~1 air run tp @s ~ ~ ~1
+# execute as @a[gamemode=!spectator] at @s positioned ~-0.2 ~ ~ as @e[type=minecraft:shulker,sort=nearest,limit=1,distance=..0.8] at @s if block ~-1 ~-0.8 ~ #game:terracotta if block ~-1 ~ ~ air run tp @s ~-1 ~ ~
+# execute as @a[gamemode=!spectator] at @s positioned ~0.2 ~ ~ as @e[type=minecraft:shulker,sort=nearest,limit=1,distance=..0.8] at @s if block ~1 ~-0.8 ~ #game:terracotta if block ~1 ~ ~ air run tp @s ~1 ~ ~
 
 #Generators
 execute as @e[type=area_effect_cloud,tag=gen] at @s positioned ~ ~-1 ~ run function game:game/res_gen
