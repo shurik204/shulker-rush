@@ -19,3 +19,4 @@ execute if entity @s[tag=YellowBed,scores={health=0}] run tellraw @a [{"text":"Ð
 execute if score @s health matches 0 at @s run playsound minecraft:entity.wither.death master @a ~ ~ ~ 10000 1 1
 execute if score @s health matches 0 run tp @s ~ 500 ~
 
+data modify entity @s Health set value 30

@@ -70,10 +70,9 @@ scoreboard players set @a placePlanks 0
 scoreboard players set @a placeEndStone 0
 scoreboard players set @a placeObsidian 0
 
-#Shulker's hearts counter
-execute as @e[type=shulker] at @s run function game:game/health
+#Shulkers' functions
+execute as @e[type=shulker] at @s run function game:game/shulker
 scoreboard players set @a hurt 0
-execute as @e[type=shulker] run data modify entity @s Health set value 30
 
 #Ending game condition
 execute as @a[team=yellow,gamemode=adventure] run scoreboard players add #YCount var 1
