@@ -46,3 +46,4 @@ replaceitem entity @s enderchest.23 minecraft:air
 replaceitem entity @s enderchest.24 minecraft:air
 replaceitem entity @s enderchest.25 minecraft:air
 replaceitem entity @s enderchest.26 minecraft:air
+tag @s remove NeedInit

@@ -48,9 +48,11 @@ execute as @a[tag=!Joined,team=!yellow,team=!blue] run scoreboard players set @s
 #execute as @a[scores={InGame=1..}] unless score @s InGame = #Game InGame run team join player @s
 #execute as @a[scores={InGame=1..}] unless score @s InGame = #Game InGame run scoreboard players set @s InGame 0
 
-#Give nausea to rejoined players
-execute as @a[tag=!Joined,scores={InGame=1..}] run effect give @s minecraft:nausea 6 0 true
+#Join controller
+execute as @a[tag=NeedInit] run function game:game/init_player
+effect give @a[tag=!Joined,scores={InGame=1..}] minecraft:nausea 6 0 true
 team join player @a[team=!player,team=!yellow,team=!blue]
+gamemode spectator @a[team=!yellow,team=!blue,tag=!Joined]
 
 #Fill markers
 tag @a[tag=!fillEnd] add fillEnd
@@ -71,7 +73,7 @@ scoreboard players set @a placeEndStone 0
 scoreboard players set @a placeObsidian 0
 
 #Shulker's hearts counter
-execute as @e[type=shulker] at @s run function game:game/health
+execute as @e[type=shulker,tag=bed] at @s run function game:game/shulker
 scoreboard players set @a hurt 0
 execute as @e[type=shulker] run data modify entity @s Health set value 30
 

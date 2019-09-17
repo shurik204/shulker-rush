@@ -21,7 +21,10 @@ execute if score @s[team=blue] buyID matches 4 if score @e[type=area_effect_clou
 execute if score @s[team=blue] buyID matches 4 if score @e[type=area_effect_cloud,tag=UpB,limit=1] armorLvl matches 1 run scoreboard players remove @e[type=area_effect_cloud,tag=UpB] statSouls 6
 execute if score @s[team=blue] buyID matches 4 if score @e[type=area_effect_cloud,tag=UpB,limit=1] armorLvl matches 2 run scoreboard players remove @e[type=area_effect_cloud,tag=UpB] statSouls 9
 execute if score @s[team=blue] buyID matches 4 run scoreboard players add @e[type=area_effect_cloud,tag=UpB] armorLvl 1
-execute if score @s[team=blue] buyID matches 4 as @a[team=blue] run function game:shop/item/armor
+execute if score @s[team=blue] buyID matches 4 as @a[team=blue] run tag @s add givea
+execute if score @s[team=blue] buyID matches 4 as @a[team=blue] at @s run tp @s ~ ~73 ~
+execute if score @s[team=blue] buyID matches 4 as @a[team=blue] run effect give @s minecraft:levitation 10000 255 true
+execute if score @s[team=blue] buyID matches 4 as @a[team=blue] run schedule function game:shop/item/armor/armor 2t
 
 execute if score @s[team=blue] buyID matches 5 run tellraw @a[team=blue] {"text":"Твоя команда улучшила Генератор ресурсов","color":"green"}
 execute if score @s[team=blue] buyID matches 5 if score @e[type=area_effect_cloud,tag=UpB,limit=1] forgeLvl matches 0 run scoreboard players remove @e[type=area_effect_cloud,tag=UpB] statSouls 2

@@ -11,3 +11,4 @@ clear @a
 fill 989 172 1109 1004 170 1096 minecraft:water replace air
 title @a actionbar ""
 scoreboard players set #Debug var 0
+tag @a remove NeedInit

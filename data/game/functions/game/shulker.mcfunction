@@ -18,4 +18,3 @@ execute if entity @s[tag=BlueBed,scores={health=0}] run tellraw @a [{"text":"Ш�
 execute if entity @s[tag=YellowBed,scores={health=0}] run tellraw @a [{"text":"Шалкер жёлтых был уничтожен","color":"yellow"}]
 execute if score @s health matches 0 at @s run playsound minecraft:entity.wither.death master @a ~ ~ ~ 10000 1 1
 execute if score @s health matches 0 run tp @s ~ 500 ~
-

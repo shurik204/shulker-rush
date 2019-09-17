@@ -7,6 +7,7 @@ fill 1003 192 1085 1009 188 1079 air
 
 scoreboard players set @e[tag=Upgrade] statSouls 0
 execute at @e[type=minecraft:area_effect_cloud,tag=Chest] run data merge block ~ ~ ~ {Items:[]}
+playsound minecraft:entity.player.levelup master @a ~ ~ ~ 1000 1.0 1
 
 scoreboard players set @e[type=area_effect_cloud,tag=gen] ironGen 40
 scoreboard players set @e[type=area_effect_cloud,tag=gen] goldGen 40
