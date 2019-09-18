@@ -51,6 +51,7 @@ execute as @a[tag=!Joined,team=!yellow,team=!blue] run scoreboard players set @s
 #Join controller
 execute as @a[tag=NeedInit] run function game:game/init_player
 effect give @a[tag=!Joined,scores={InGame=1..}] minecraft:nausea 6 0 true
+execute as @a[tag=!Joined,team=!player] run function game:shop/item/armor/givea
 team join player @a[team=!player,team=!yellow,team=!blue]
 gamemode spectator @a[team=!yellow,team=!blue,tag=!Joined]
 
@@ -72,8 +73,8 @@ scoreboard players set @a placePlanks 0
 scoreboard players set @a placeEndStone 0
 scoreboard players set @a placeObsidian 0
 
-#Shulker's hearts counter
-execute as @e[type=shulker,tag=bed] at @s run function game:game/shulker
+#Shulkers' functions
+execute as @e[type=shulker] at @s run function game:game/shulker
 scoreboard players set @a hurt 0
 
 #Ending game condition
