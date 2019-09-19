@@ -28,5 +28,5 @@ execute if score @s result matches 1 run scoreboard players set @s clearDetect -
 execute as @s[scores={buyID=1..5}] run function game:shop/upgrader/bupgrade
 
 execute if entity @s[scores={buyID=1..,clearDetect=-1}] at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 2 1
-tellraw @s[scores={buyID=-1,clearDetect=-1}] {"text":"У тебя недостаточно душ для покупки","color":"red"}
+tellraw @s[scores={buyID=-1,clearDetect=-1}] {"text":"You don\'t have enough souls to buy this","color":"red"}
 execute at @s run playsound minecraft:entity.item.break master @s[scores={buyID=-1,clearDetect=-1}] ~ ~ ~ 1 1 1

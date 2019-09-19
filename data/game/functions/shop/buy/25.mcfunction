@@ -1,3 +1,2 @@
 clear @s minecraft:nether_wart 2
-give @s minecraft:golden_axe{AttributeModifiers:[{AttributeName:"generic.attackDamage", Name:"generic.attackDamage",Amount:4,Operation:0,UUIDLeast:894654,UUIDMost:2872}],Unbreakable:1,display:{Name:'{"translate":"item.minecraft.golden_axe","italic":false}'},HideFlags:127,CanDestroy:["oak_planks","#game:stained_glass","obsidian","end_stone","cobweb"],Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
-#give @s minecraft:golden_axe{Unbreakable:1,display:{Name:'{"translate":"item.minecraft.golden_axe","italic":false}'},CanDestroy:["oak_planks","#game:stained_glass","obsidian","end_stone","cobweb"],Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+give @s minecraft:golden_axe{display:{Name:'{"translate":"item.minecraft.golden_axe","color":"white","italic":false}'},HideFlags:127,Unbreakable:1,CanDestroy:["oak_planks","#game:stained_glass","obsidian","end_stone","cobweb"],Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}

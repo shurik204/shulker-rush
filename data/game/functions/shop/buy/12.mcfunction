@@ -1,5 +1,5 @@
 clear @s[scores={statArmor=0..2}] minecraft:nether_wart 8
-tellraw @s[scores={statArmor=3}] {"text":"У тебя уже есть такая броня","color":"red"}
+tellraw @s[scores={statArmor=3}] {"text":"You already have this armor","color":"red"}
 
 tag @s[scores={statArmor=0..2}] add givea
 execute at @s[scores={statArmor=0..2}] run tp @s ~ ~73 ~

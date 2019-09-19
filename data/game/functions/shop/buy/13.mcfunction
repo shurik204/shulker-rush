@@ -1,5 +1,5 @@
 clear @s[tag=!elytra] minecraft:nether_wart 6
-tellraw @s[tag=elytra] {"text":"У тебя уже есть элитры","color":"red"}
+tellraw @s[tag=elytra] {"text":"You already have elytra","color":"red"}
 
 tag @s[tag=!elytra] add givea
 execute at @s[tag=!elytra] run tp @s ~ ~73 ~
