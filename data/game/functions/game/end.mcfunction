@@ -1,4 +1,4 @@
-title @a subtitle "победила"
+title @a subtitle "won the game"
 execute as @e[type=area_effect_cloud,tag=fill] at @s run function game:game/reset_arena
 execute as @a at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 10000 1 1
 kill @e[type=item]
@@ -12,3 +12,4 @@ fill 989 172 1109 1004 170 1096 minecraft:water replace air
 title @a actionbar ""
 scoreboard players set #Debug var 0
 tag @a remove NeedInit
+#Created by shurik204 | Teksar Team

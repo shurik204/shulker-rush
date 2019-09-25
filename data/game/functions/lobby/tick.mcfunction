@@ -16,9 +16,9 @@ clear @a[tag=!Joined]
 team join player @a[tag=!Joined]
 
 execute as @a[scores={openVillager=1..}] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 10000 1
-tellraw @a[x=991,y=180,z=1142,scores={openVillager=1..},distance=..6] {"text":"Ты присоединился к команде Жёлтых!","color":"yellow","bold":false}
+tellraw @a[x=991,y=180,z=1142,scores={openVillager=1..},distance=..6] {"text":"You have just joined the Yellow Team!","color":"yellow","bold":false}
 team join yellow @a[x=991,y=180,z=1142,scores={openVillager=1..},distance=..6]
-tellraw @a[x=1003,y=180,z=1142,scores={openVillager=1..},distance=..6] {"text":"Ты присоединился к команде Синих!","color":"dark_aqua","bold":false}
+tellraw @a[x=1003,y=180,z=1142,scores={openVillager=1..},distance=..6] {"text":"You have just joined the Blue Team!","color":"dark_aqua","bold":false}
 team join blue @a[x=1003,y=180,z=1142,scores={openVillager=1..},distance=..6]
 scoreboard players set @a openVillager 0
 

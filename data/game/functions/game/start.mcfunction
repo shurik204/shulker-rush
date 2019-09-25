@@ -16,7 +16,7 @@ scoreboard players set @e[type=area_effect_cloud,tag=Upgrade] forgeLvl 0
 scoreboard players set @e[type=area_effect_cloud,tag=Upgrade] swordLvl 0
 scoreboard players set @e[type=area_effect_cloud,tag=Upgrade] armorLvl 0
 scoreboard players set @e[type=area_effect_cloud,tag=Upgrade] effectLvl 0
-title @a subtitle "Игра началась"
+title @a subtitle {"text":"The game have just started","color":"yellow"}
 kill @e[type=shulker,tag=bed]
 summon minecraft:shulker 960 178 1092 {NoAI:1,Tags:["bed","YellowBed"],Color:4,CustomNameVisible:0,CustomName:'{"text":"❤❤❤❤❤❤❤","color":"red"}'}
 summon minecraft:shulker 1034 178 1092 {NoAI:1,Tags:["bed","BlueBed"],Color:9,CustomNameVisible:0,CustomName:'{"text":"❤❤❤❤❤❤❤","color":"red"}'}
@@ -30,3 +30,4 @@ scoreboard players set @e[type=shulker,tag=bed] effectLvl 0
 execute if score #Debug var matches 1 run tellraw @a "Debug mode"
 #Remove items
 kill @e[type=item]
+#Created by shurik204 | Teksar Team

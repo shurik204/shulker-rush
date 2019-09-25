@@ -10,13 +10,13 @@ execute if score @s[team=blue] buyID matches 2 if score @e[type=area_effect_clou
 execute if score @s[team=blue] buyID matches 2 if score @e[type=area_effect_cloud,tag=UpB,limit=1] effectLvl matches 2 run scoreboard players remove @e[type=area_effect_cloud,tag=UpB] statSouls 6
 execute if score @s[team=blue] buyID matches 2 run scoreboard players add @e[type=area_effect_cloud,tag=UpB] effectLvl 1
 
-execute if score @s[team=blue] buyID matches 3 run tellraw @a[team=blue] {"text":"Your team have just upgraded Armor enchantments","color":"green"}
+execute if score @s[team=blue] buyID matches 3 run tellraw @a[team=blue] {"text":"Your team have just upgraded Sword enchantments","color":"green"}
 execute if score @s[team=blue] buyID matches 3 if score @e[type=area_effect_cloud,tag=UpB,limit=1] swordLvl matches 0 run scoreboard players remove @e[type=area_effect_cloud,tag=UpB] statSouls 4
 execute if score @s[team=blue] buyID matches 3 if score @e[type=area_effect_cloud,tag=UpB,limit=1] swordLvl matches 1 run scoreboard players remove @e[type=area_effect_cloud,tag=UpB] statSouls 7
 execute if score @s[team=blue] buyID matches 3 if score @e[type=area_effect_cloud,tag=UpB,limit=1] swordLvl matches 2 run scoreboard players remove @e[type=area_effect_cloud,tag=UpB] statSouls 11
 execute if score @s[team=blue] buyID matches 3 run scoreboard players add @e[type=area_effect_cloud,tag=UpB] swordLvl 1
 
-execute if score @s[team=blue] buyID matches 4 run tellraw @a[team=blue] {"text":"Your team have just upgraded Sword enchantments","color":"green"}
+execute if score @s[team=blue] buyID matches 4 run tellraw @a[team=blue] {"text":"Your team have just upgraded Armor enchantments","color":"green"}
 execute if score @s[team=blue] buyID matches 4 if score @e[type=area_effect_cloud,tag=UpB,limit=1] armorLvl matches 0 run scoreboard players remove @e[type=area_effect_cloud,tag=UpB] statSouls 4
 execute if score @s[team=blue] buyID matches 4 if score @e[type=area_effect_cloud,tag=UpB,limit=1] armorLvl matches 1 run scoreboard players remove @e[type=area_effect_cloud,tag=UpB] statSouls 6
 execute if score @s[team=blue] buyID matches 4 if score @e[type=area_effect_cloud,tag=UpB,limit=1] armorLvl matches 2 run scoreboard players remove @e[type=area_effect_cloud,tag=UpB] statSouls 9

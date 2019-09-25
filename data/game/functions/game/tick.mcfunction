@@ -16,12 +16,12 @@ execute at @e[type=area_effect_cloud,tag=Respawn] as @a[tag=regiveAll,distance=.
 execute as @a store result score @s height run data get entity @s Pos[1]
 execute as @a[scores={InGame=1..}] if score @s height matches ..120 run tag @s add regiveAll
 execute as @a[scores={InGame=1..}] if score @s height matches ..120 run kill @s
-execute if entity @a[scores={deathTest=1..}] if entity @a[scores={killTest=1..}] run tellraw @a [{"selector":"@a[limit=1,scores={deathTest=1..}]"},{"text":" был убит игроком ","color":"gold"},{"selector":"@a[limit=1,scores={killTest=1..}]"}]
-execute as @a[scores={killTest=1..},team=yellow] run tellraw @a[team=yellow] {"text":"+1 Душа","color":"aqua"}
-execute as @a[scores={killTest=1..},team=blue] run tellraw @a[team=blue] {"text":"+1 Душа","color":"aqua"}
+execute if entity @a[scores={deathTest=1..}] if entity @a[scores={killTest=1..}] run tellraw @a [{"selector":"@a[limit=1,scores={deathTest=1..}]"},{"text":" was killed by ","color":"gold"},{"selector":"@a[limit=1,scores={killTest=1..}]"}]
+execute as @a[scores={killTest=1..},team=yellow] run tellraw @a[team=yellow] {"text":"+1 Soul","color":"aqua"}
+execute as @a[scores={killTest=1..},team=blue] run tellraw @a[team=blue] {"text":"+1 Soul","color":"aqua"}
 gamemode spectator @s[tag=eleminated,scores={deathTest=1..}]
 
-execute as @a[tag=eleminated,scores={deathTest=1..}] run tellraw @a [{"selector":"@s"},{"text":" выбывает из игры","color":"red"}]
+execute as @a[tag=eleminated,scores={deathTest=1..}] run tellraw @a [{"selector":"@s"},{"text":" was eleminated","color":"red"}]
 execute as @a[tag=eleminated,scores={deathTest=1..}] run gamemode spectator @s
 
 
@@ -35,18 +35,14 @@ scoreboard players set @a killTest 0
 #execute as @a run function game:shop/item/armor/givea
 execute as @a if score @s food matches ..18 run effect give @s minecraft:saturation 2 0 true
 
-execute as @a[team=yellow] run title @s actionbar [{"text":"Души: ","color":"dark_aqua","bold":true},{"score":{"name":"@e[type=area_effect_cloud,limit=1,tag=UpY]","objective":"statSouls"}},{"text":" | ","color":"gray"},{"text":"Убийств: ","color":"green"},{"score":{"name":"@s","objective":"totalKill"}},{"text":" | ","color":"gray"},{"text":"Смертей: ","color":"red"},{"score":{"name":"@s","objective":"deathCount"}}]
-execute as @a[team=blue] run title @s actionbar [{"text":"Души: ","color":"dark_aqua","bold":true},{"score":{"name":"@e[type=area_effect_cloud,limit=1,tag=UpB]","objective":"statSouls"}},{"text":" | ","color":"gray"},{"text":"Убийств: ","color":"green"},{"score":{"name":"@s","objective":"totalKill"}},{"text":" | ","color":"gray"},{"text":"Смертей: ","color":"red"},{"score":{"name":"@s","objective":"deathCount"}}]
+execute as @a[team=yellow] run title @s actionbar [{"text":"Souls: ","color":"dark_aqua","bold":true},{"score":{"name":"@e[type=area_effect_cloud,limit=1,tag=UpY]","objective":"statSouls"}},{"text":" | ","color":"gray"},{"text":"Kills: ","color":"green"},{"score":{"name":"@s","objective":"totalKill"}},{"text":" | ","color":"gray"},{"text":"Deathes: ","color":"red"},{"score":{"name":"@s","objective":"deathCount"}}]
+execute as @a[team=blue] run title @s actionbar [{"text":"Souls: ","color":"dark_aqua","bold":true},{"score":{"name":"@e[type=area_effect_cloud,limit=1,tag=UpB]","objective":"statSouls"}},{"text":" | ","color":"gray"},{"text":"Kills: ","color":"green"},{"score":{"name":"@s","objective":"totalKill"}},{"text":" | ","color":"gray"},{"text":"Deathes: ","color":"red"},{"score":{"name":"@s","objective":"deathCount"}}]
 
 
 execute as @a[tag=!Joined,team=!yellow,team=!blue] run gamemode spectator
 execute as @a[tag=!Joined,team=!yellow,team=!blue] run team join player @s
 execute as @a[tag=!Joined,team=!yellow,team=!blue] run scoreboard players set @s InGame 0
-
-#It seems to be working, but it doesnt :\ | Maybe problem with start?
-#execute as @a[scores={InGame=1..}] unless score @s InGame = #Game InGame run gamemode spectator
-#execute as @a[scores={InGame=1..}] unless score @s InGame = #Game InGame run team join player @s
-#execute as @a[scores={InGame=1..}] unless score @s InGame = #Game InGame run scoreboard players set @s InGame 0
+gamemode spectator @a[x=987,y=179,z=1136,dx=30,dy=30,dz=30,tag=!Joined]
 
 #Join controller
 execute as @a[tag=NeedInit] run function game:game/init_player
@@ -54,6 +50,11 @@ effect give @a[tag=!Joined,scores={InGame=1..}] minecraft:nausea 6 0 true
 execute as @a[tag=!Joined,team=!player] run function game:shop/item/armor/givea
 team join player @a[team=!player,team=!yellow,team=!blue]
 gamemode spectator @a[team=!yellow,team=!blue,tag=!Joined]
+
+#It seems to be working, but it doesnt :\ | Maybe problem with start?
+execute as @a[scores={InGame=1..}] unless score @s InGame = #Game var run gamemode spectator
+execute as @a[scores={InGame=1..}] unless score @s InGame = #Game var run team join player @s
+execute as @a[scores={InGame=1..}] unless score @s InGame = #Game var run scoreboard players set @s InGame 0
 
 #Fill markers
 tag @a[tag=!fillEnd] add fillEnd
@@ -103,7 +104,6 @@ execute as @a[nbt={Inventory:[{id:"minecraft:golden_axe"}]}] run tag @s add HasA
 
 #Kill potion
 execute as @a[scores={drinkPotion=1..}] at @s run function game:game/kill_potion
-scoreboard players set @a drinkPotion 0
 
 #Fix block drops (ik about Loot Tables, but i cant make it work)
 execute as @e[type=item,tag=!Modded,nbt={Item:{id:"minecraft:end_stone"}}] run data merge entity @s {Item:{id:"minecraft:end_stone",tag:{display:{Name:'{"translate":"block.minecraft.end_stone","italic":false}'},CanPlaceOn:["brown_terracotta","oak_leaves","spruce_leaves","black_terracotta","lime_terracotta","white_terracotta","red_terracotta","light_gray_terracotta","light_blue_terracotta","cyan_terracotta","green_terracotta","magenta_terracotta","yellow_terracotta","nether_brick_stairs","spruce_stairs","nether_wart_block","oak_fence","spruce_slab","oak_slab","torch","brown_shulker_box","grass","hopper","ender_chest","chest","daylight_detector","#game:stained_glass","end_stone","obsidian","oak_planks","cobweb"],HideFlags:127,CanDestroy:["oak_planks","#game:stained_glass","obsidian","end_stone","cobweb"]}},Tags:["Modded"]}

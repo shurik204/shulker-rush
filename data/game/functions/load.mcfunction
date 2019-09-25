@@ -1,4 +1,5 @@
 execute as @e[type=minecraft:falling_block] run data modify entity @s Time set value 1
+scoreboard objectives add trigger trigger
 scoreboard objectives add statCoins1 dummy
 scoreboard objectives add statCoins2 dummy
 scoreboard objectives add statCoins3 dummy
@@ -48,3 +49,4 @@ team add player {"text":"Player","color":"gray"}
 scoreboard objectives add leaveGame minecraft.custom:minecraft.leave_game
 scoreboard objectives add openVillager minecraft.custom:minecraft.talked_to_villager
 setworldspawn 997 181 1144
+#Created by shurik204 | Teksar Team

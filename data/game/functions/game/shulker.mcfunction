@@ -14,8 +14,9 @@ execute if entity @s[tag=YellowBed,scores={health=..0}] run tag @a[team=yellow,g
 
 execute if entity @s[scores={health=0..,Hurted=..29}] run function game:game/update_name
 
-execute if entity @s[tag=BlueBed,scores={health=0}] run tellraw @a [{"text":"Шалкер синих был уничтожен","color":"aqua"}]
-execute if entity @s[tag=YellowBed,scores={health=0}] run tellraw @a [{"text":"Шалкер жёлтых был уничтожен","color":"yellow"}]
+execute if entity @s[tag=BlueBed,scores={health=0}] run tellraw @a [{"text":"Blue Cabinet of Souls was destoyed","color":"aqua"}]
+execute if entity @s[tag=YellowBed,scores={health=0}] run tellraw @a [{"text":"Yellow Cabinet of Souls was destoyed","color":"yellow"}]
 execute if score @s health matches 0 at @s run playsound minecraft:entity.wither.death master @a ~ ~ ~ 10000 1 1
 execute if score @s health matches 0 run tp @s ~ 500 ~
 data modify entity @s Health set value 30
+#Created by shurik204 | Teksar Team
