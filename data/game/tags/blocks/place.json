@@ -1,0 +1,23 @@
+{
+    "replace":true,
+    "values":[
+        "#game:terracotta",
+        "#game:stained_glass",
+        "minecraft:nether_brick_stairs",
+        "minecraft:spruce_stairs",
+        "minecraft:nether_wart_block",
+        "minecraft:oak_fence",
+        "minecraft:spruce_slab",
+        "minecraft:oak_slab",
+        "minecraft:torch",
+        "minecraft:grass",
+        "minecraft:hopper",
+        "minecraft:ender_chest",
+        "minecraft:chest",
+        "minecraft:daylight_detector",
+        "minecraft:end_stone",
+        "minecraft:obsidian",
+        "minecraft:oak_planks",
+        "minecraft:cobweb"
+    ]
+}

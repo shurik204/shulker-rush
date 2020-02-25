@@ -1,0 +1,7 @@
+data modify entity @s[scores={HP=7}] CustomName set value '[{"text":"❤❤❤❤❤❤❤","color":"red"}]'
+data modify entity @s[scores={HP=6}] CustomName set value '[{"text":"❤❤❤❤❤❤","color":"red"},{"text":"❤","color":"gray"}]'
+data modify entity @s[scores={HP=5}] CustomName set value '[{"text":"❤❤❤❤❤","color":"red"},{"text":"❤❤","color":"gray"}]'
+data modify entity @s[scores={HP=4}] CustomName set value '[{"text":"❤❤❤❤","color":"red"},{"text":"❤❤❤","color":"gray"}]'
+data modify entity @s[scores={HP=3}] CustomName set value '[{"text":"❤❤❤","color":"red"},{"text":"❤❤❤❤","color":"gray"}]'
+data modify entity @s[scores={HP=2}] CustomName set value '[{"text":"❤❤","color":"red"},{"text":"❤❤❤❤❤","color":"gray"}]'
+data modify entity @s[scores={HP=1}] CustomName set value '[{"text":"❤","color":"red"},{"text":"❤❤❤❤❤❤","color":"gray"}]'

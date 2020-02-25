@@ -1,2 +1,0 @@
-clear @s minecraft:nether_wart 4
-give @s minecraft:golden_axe{display:{Name:'{"translate":"item.minecraft.golden_axe","color":"white","italic":false}'},HideFlags:127,Unbreakable:1,CanDestroy:["oak_planks","#game:stained_glass","obsidian","end_stone","cobweb"],Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
