@@ -1,5 +1,5 @@
 clear @s
-gamemode adventure @s
+gamemode adventure
 effect give @s minecraft:saturation 1 255 true
 effect give @s minecraft:regeneration 2 255 true
 
@@ -7,12 +7,17 @@ effect give @s minecraft:regeneration 2 255 true
 xp set @s 0 levels
 xp set @s 0 points
 
+scoreboard players operation @s GameID = #Current GameID
 scoreboard players set @s killCount 0
 scoreboard players set @s deathCount 0
 
 scoreboard players set @s ArmorType 0
 scoreboard players set @s swordLvl 0
 scoreboard players set @s armorLvl 0
+tag @s remove HasElytra
+tag @s remove HasAxe
+
+tag @s remove eleminated
 
 replaceitem entity @s enderchest.0 minecraft:air
 replaceitem entity @s enderchest.1 minecraft:air

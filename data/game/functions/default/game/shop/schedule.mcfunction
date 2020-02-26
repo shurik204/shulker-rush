@@ -1,5 +1,6 @@
 function game:default/game/shop/update
 
 execute at @e[type=minecraft:area_effect_cloud,tag=Shop] as @a[distance=..8,gamemode=!spectator] run function game:default/game/shop/buy
+kill @e[type=item,nbt={Item:{tag:{shop:true}}}]
 
-schedule function game:default/game/shop/schedule 1t
+schedule function game:default/game/shop/schedule 2t replace

@@ -27,3 +27,4 @@ execute if score @s buyID matches 23 run function game:default/game/shop/item/23
 execute if score @s buyID matches 25 run function game:default/game/shop/item/25
 execute if score @s buyID matches 26 run function game:default/game/shop/item/26
 execute if score @s buyID matches 27 run function game:default/game/shop/item/27
+execute if score @s buyID matches 1.. run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 10000 2 1

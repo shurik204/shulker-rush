@@ -19,6 +19,7 @@ execute if score #NoGlass settings matches 0 run data modify storage minecraft:s
 # Resetting everything #
 ########################
 
+scoreboard players add #Current GameID 1
 # Upgrades
 scoreboard players set #Effects yellow 0
 scoreboard players set #Effects blue 0

@@ -26,7 +26,7 @@ team modify player color gray
 team modify player nametagVisibility always
 team modify player collisionRule never
 team modify player friendlyFire false
-team modify player deathMessageVisibility  never
+team modify player deathMessageVisibility never
 
 #####################
 # Create objectives #
@@ -46,6 +46,9 @@ scoreboard objectives add kill playerKillCount
 scoreboard objectives add killCount playerKillCount
 scoreboard objectives add deathCount deathCount
 scoreboard objectives add leaveGame minecraft.custom:minecraft.leave_game
+scoreboard objectives add GameID dummy
+# Reset GameID if it has wrong value
+execute unless score #Current GameID matches 1.. run scoreboard players set #Current GameID 1
 
 scoreboard objectives add ArmorType dummy
 scoreboard objectives add swordLvl dummy
@@ -60,6 +63,7 @@ scoreboard objectives add statCoins1 dummy
 scoreboard objectives add statCoins2 dummy
 scoreboard objectives add statCoins3 dummy
 
+scoreboard objectives add Timer dummy
 ################
 # Finishing up #
 ################
