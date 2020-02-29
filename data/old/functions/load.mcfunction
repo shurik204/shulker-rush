@@ -22,7 +22,7 @@ scoreboard objectives add deathTest deathCount
 scoreboard objectives add killTest playerKillCount
 scoreboard objectives add deathCount deathCount
 scoreboard objectives add totalKill playerKillCount
-scoreboard objectives add health dummy
+scoreboard objectives add HP dummy
 scoreboard objectives add height dummy
 scoreboard objectives add InGame dummy
 scoreboard objectives add ironGen dummy

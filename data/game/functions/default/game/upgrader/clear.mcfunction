@@ -1,0 +1,9 @@
+clear @s minecraft:emerald{U:1}
+clear @s minecraft:golden_carrot{U:1}
+clear @s minecraft:iron_chestplate{U:1}
+clear @s minecraft:iron_sword{U:1}
+clear @s minecraft:brewing_stand{U:1}
+clear @s minecraft:golden_carrot{U:2}
+clear @s minecraft:iron_sword{U:2}
+clear @s minecraft:iron_chestplate{U:2}
+clear @s minecraft:brewing_stand{U:2}

@@ -24,9 +24,9 @@ summon minecraft:area_effect_cloud 951.5 180.7 1083.5 {Age: -2147483648, Duratio
 summon minecraft:area_effect_cloud 1043.5 180.7 1083.5 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, CustomName:'{"text":"Генератор","color":"gold"}', CustomNameVisible:1b, Tags: ["Tutorial","game","bIronGen","bGoldGen"]}
 
 # Uprgader yellow
-summon minecraft:area_effect_cloud 962.5 179.0 1083.5 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, CustomName:'[{"text":"Улучшения","color":"red"},{"text":" - ПКМ чтобы открыть","color":"gray"}]', CustomNameVisible:1b, Tags: ["Tutorial","game","yUpgrader"]}
+summon minecraft:area_effect_cloud 962.5 179.0 1083.5 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, CustomName:'[{"text":"Улучшения","color":"red"},{"text":" - ПКМ чтобы открыть","color":"gray"}]', CustomNameVisible:1b, Tags: ["Tutorial","Upgrader","game","yUpgrader"]}
 # Upgrader blue
-summon minecraft:area_effect_cloud 1032.5 179.0 1083.5 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, CustomName:'[{"text":"Улучшения","color":"red"},{"text":" - ПКМ чтобы открыть","color":"gray"}]', CustomNameVisible:1b, Tags: ["Tutorial","game","bUpgrader"]}
+summon minecraft:area_effect_cloud 1032.5 179.0 1083.5 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, CustomName:'[{"text":"Улучшения","color":"red"},{"text":" - ПКМ чтобы открыть","color":"gray"}]', CustomNameVisible:1b, Tags: ["Tutorial","Upgrader","game","bUpgrader"]}
 
 # Spawnpoint yellow
 summon minecraft:area_effect_cloud 948.5 179.5 1078.5 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["Respawn","yRespawn","game"]}

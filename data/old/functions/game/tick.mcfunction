@@ -42,7 +42,7 @@ execute as @a[scores={InGame=1..}] unless score @s InGame = #Game var run scoreb
 #Fill markers
 tag @a[tag=!fillEnd] add fillEnd
 execute at @e[tag=fill,type=area_effect_cloud] positioned ~-10 ~-9 ~-10 run tag @a[dx=20,dy=19,dz=20] remove fillEnd
-execute as @a at @s[tag=fillEnd] run function game:game/controller/block_place
+execute as @a[tag=fillEnd] at @s run function game:game/controller/block_place
 
 #Shulkers' functions
 execute as @e[type=shulker] at @s run function game:game/shulker

@@ -14,6 +14,8 @@
         "minecraft:hopper",
         "minecraft:ender_chest",
         "minecraft:chest",
+        "minecraft:oak_leaves",
+        "minecraft:spruce_leaves",
         "minecraft:daylight_detector",
         "minecraft:end_stone",
         "minecraft:obsidian",

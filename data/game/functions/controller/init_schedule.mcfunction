@@ -17,3 +17,4 @@ schedule function game:default/game/generator/ruby 40s replace
 schedule function game:default/game/tick 1t replace
 schedule function game:default/game/player/respawn/schedule 1t replace
 schedule function game:default/game/player/schedule 1t replace
+schedule function game:default/game/filler/schedule 2t

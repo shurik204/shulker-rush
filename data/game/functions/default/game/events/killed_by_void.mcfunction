@@ -8,7 +8,7 @@ tag @s add eleminated
 execute if entity @s[team=yellow] if entity @e[type=shulker,tag=yBed] run tag @s remove eleminated
 execute if entity @s[team=blue] if entity @e[type=shulker,tag=bBed] run tag @s remove eleminated
 execute if entity @s[tag=!eleminated] run tag @s add regiveAll
-execute if entity @s[tag=eleminated] run tellraw @a [{"selector":"@s"},{"text":" выбыл из игры","color":"red"}]
+execute if entity @s[team=!player,tag=eleminated] run tellraw @a [{"selector":"@s"},{"text":" выбыл из игры","color":"red"}]
 kill @s
 scoreboard players set @s death 0
 ##########################################

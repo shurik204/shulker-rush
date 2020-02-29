@@ -7,4 +7,10 @@ execute as @a[scores={height=..130}] run function game:default/game/events/kille
 
 execute as @a[tag=!Joined] at @s run function game:default/game/events/player_joined
 
+scoreboard players set #Count yellow 0
+scoreboard players set #Count blue 0
+execute as @a[team=yellow] run scoreboard players add #Count yellow 1
+execute as @a[team=blue] run scoreboard players add #Count blue 1
+# execute if score #Count yellow matches 1.. if score #Count blue matches 0 run
+
 schedule function game:default/game/tick 1t replace
