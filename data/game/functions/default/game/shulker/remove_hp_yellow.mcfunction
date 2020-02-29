@@ -5,7 +5,7 @@ execute if entity @s[scores={HP=1..}] run particle minecraft:block minecraft:yel
 execute if entity @s[scores={HP=..0}] run function game:default/game/shulker/kill_shulker
 
 #Translate
-execute if entity @s[scores={HP=..0}] run title @a[team=!yellow] subtitle {"text":"Шалкер синих уничтожен","color":"green"}
+execute if entity @s[scores={HP=..0}] run title @a[team=!yellow] subtitle {"text":"Шалкер жёлтых уничтожен","color":"green"}
 #Translate
 execute if entity @s[scores={HP=..0}] run title @a[team=yellow] subtitle {"text":"Твой Шалкер был уничтожен","color":"red"}
 
