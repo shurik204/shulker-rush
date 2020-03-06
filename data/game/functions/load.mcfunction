@@ -39,6 +39,8 @@ scoreboard objectives add var dummy
 # If something goes wrong with score reset to state "Lobby"
 execute unless score #State var matches 0.. run scoreboard players set #State var 0
 
+scoreboard objectives add openVillager minecraft.custom:minecraft.talked_to_villager
+
 # Game scores
 scoreboard objectives add settings dummy
 scoreboard objectives add yellow dummy
@@ -66,6 +68,7 @@ scoreboard objectives add ArmorType dummy
 scoreboard objectives add swordLvl dummy
 scoreboard objectives add armorLvl dummy
 scoreboard objectives add food food
+scoreboard objectives add HasAxe dummy
 # Shop
 scoreboard objectives add result dummy
 scoreboard objectives add clearDetect dummy

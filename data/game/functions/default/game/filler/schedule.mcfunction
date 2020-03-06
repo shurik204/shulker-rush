@@ -1,5 +1,7 @@
 tag @a add FillEnd
-execute at @e[tag=Fill,type=minecraft:area_effect_cloud] positioned ~-10 ~-9 ~-10 run tag @a[dx=20,dy=19,dz=20] remove FillEnd
+execute at @e[tag=Fill,type=minecraft:area_effect_cloud] positioned ~-7 ~-6 ~-7 run tag @a[dx=14,dy=12,dz=14,gamemode=!spectator] remove FillEnd
 
-execute as @a[tag=FillEnd] at @s run function game:default/game/events/block_placed
-schedule function game:default/game/filler/schedule 2t
+execute as @a[tag=FillEnd] at @s run function #game:filler_block_placed
+execute as @a[team=!player] run function #game:filler_clear_score
+
+schedule function #game:filler_schedule 2t

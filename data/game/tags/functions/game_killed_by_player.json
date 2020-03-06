@@ -1,0 +1,6 @@
+{
+    "replace":false,
+    "values":[
+        "game:default/game/events/killed_by_player"
+    ]
+}

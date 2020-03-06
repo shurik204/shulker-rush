@@ -15,7 +15,7 @@ scoreboard players set @s ArmorType 0
 scoreboard players set @s swordLvl 0
 scoreboard players set @s armorLvl 0
 tag @s remove HasElytra
-tag @s remove HasAxe
+scoreboard players set @s HasAxe 0
 
 tag @s remove eleminated
 

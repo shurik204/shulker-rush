@@ -1,0 +1,16 @@
+{
+    "replace":false,
+    "values":[
+        "#game:yellow_iron_generator",
+        "#game:blue_iron_generator",
+        "#game:yellow_gold_generator",
+        "#game:blue_gold_generator",
+        "#game:ruby_generator",
+        "#game:tick",
+        "#game:respawn_schedule",
+        "#game:player_schedule",
+        "#game:filler_schedule",
+        "#game:shop_schedule",
+        "#game:upgrader_schedule"
+    ]
+}

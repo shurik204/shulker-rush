@@ -10,6 +10,9 @@ execute if entity @s[team=blue] if entity @e[type=shulker,tag=bBed] run tag @s r
 execute if entity @s[tag=!eleminated] run tag @s add regiveAll
 execute if entity @s[team=!player,tag=eleminated] run tellraw @a [{"selector":"@s"},{"text":" выбыл из игры","color":"red"}]
 kill @s
+
+execute at @s[team=!player] as @e[type=minecraft:item,distance=..2] store result entity @s Motion[1] double 1 run data get entity @s Motion[1] 6.0
+
 scoreboard players set @s death 0
 ##########################################
 # TODO add scoreboard message system (?) #

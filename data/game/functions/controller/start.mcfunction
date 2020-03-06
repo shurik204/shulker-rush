@@ -40,6 +40,11 @@ scoreboard players set #Forge blue 0
 scoreboard players set #Souls yellow 0
 scoreboard players set #Souls blue 0
 
+fill 985 192 1085 991 188 1079 air
+fill 1003 192 1085 1009 188 1079 air
+fill 986 176 1135 1008 190 1158 air
+kill @e[tag=Lobby]
+title @a subtitle {"text":"Игра началась!"}
 # Remove old entities
 kill @e[tag=game]
 kill @e[type=item]
@@ -48,7 +53,7 @@ function game:controller/summon
 
 # Schedule functions
 function game:controller/init_schedule
-execute as @a run function game:controller/init_player
+execute as @a[tag=NeedInit] run function game:controller/init_player
 
 #Clear the arena to make sure nothing left
 execute as @e[type=area_effect_cloud,limit=1,tag=Fill] at @s run function game:default/game/filler/clear
