@@ -1,5 +1,5 @@
 #Translate
-execute unless score @s kill matches 1.. as @a if score @s kill matches 1.. run tellraw @a [{"selector":"@a[scores={death=1..}]"},{"text":" был убит "},{"selector":"@s"}]
+execute unless score @s kill matches 1.. as @a if score @s kill matches 1.. run tellraw @a [{"selector":"@a[scores={death=1..}]"},{"text":" был убит ","color":"gold"},{"selector":"@s"}]
 
 tag @s add eleminated
 execute if entity @s[team=yellow] if entity @e[type=shulker,tag=yBed] run tag @s remove eleminated

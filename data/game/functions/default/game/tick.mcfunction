@@ -9,4 +9,6 @@ execute as @a[tag=!Joined] at @s run function #game:game_player_joined
 
 execute as @a store result score @s[tag=!regiveAll] HasAxe run clear @s minecraft:golden_axe 0
 
+execute as @a[scores={drinkPotion=1..}] at @s run function #game:used_explosive_potion
+
 execute unless score #State var matches 0 run schedule function #game:tick 1t replace

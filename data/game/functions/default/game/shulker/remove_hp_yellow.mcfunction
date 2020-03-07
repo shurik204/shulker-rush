@@ -9,5 +9,6 @@ execute if entity @s[scores={HP=..0}] run title @a[team=!yellow] subtitle {"text
 #Translate
 execute if entity @s[scores={HP=..0}] run title @a[team=yellow] subtitle {"text":"Твой Шалкер был уничтожен","color":"red"}
 
+# effect give @a[team=yellow] minecraft:blindness 1 0 true
 # I make this check not to launch rename routine if shulker is dead
 execute if entity @s run function game:default/game/shulker/update_name

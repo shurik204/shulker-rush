@@ -1,6 +1,6 @@
 # Remove from schedule lobby functions and start new ones
 # I replace schedule of functions to make sure there are no duplicates
-
+schedule clear #game:lobby_tick
 # Block drops
 schedule function #game:block_drops_schedule 5t replace
 

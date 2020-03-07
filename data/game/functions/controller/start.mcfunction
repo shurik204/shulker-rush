@@ -1,4 +1,4 @@
-
+gamerule fallDamage true
 
 ######################
 # Shop related stuff #
@@ -52,12 +52,16 @@ kill @e[type=item]
 function game:controller/summon
 
 # Schedule functions
-function game:controller/init_schedule
-execute as @a[tag=NeedInit] run function game:controller/init_player
+function #game:controller_init_schedule
+execute as @a[tag=NeedInit] run function #game:controller_init_player
 
 #Clear the arena to make sure nothing left
-execute as @e[type=area_effect_cloud,limit=1,tag=Fill] at @s run function game:default/game/filler/clear
+execute as @e[type=area_effect_cloud,limit=1,tag=Fill] at @s run function #game:filler_clear
 
 execute at @e[type=minecraft:area_effect_cloud,tag=Chest] run data modify block ~ ~ ~ Items set value []
+#Translate
 execute at @e[type=minecraft:area_effect_cloud,tag=Upgrader] unless block ~ ~-1 ~ minecraft:hopper run tellraw @a [{"text":"[Game] One of your upgrade markers is placed incorrectly! (Must be one block above the hopper)"}]
+#Translate
 execute at @e[type=minecraft:area_effect_cloud,tag=Chest] unless block ~ ~ ~ minecraft:chest run tellraw @a [{"text":"[Game] One of your chest markers is placed incorrectly!"}]
+#Translate
+tellraw @a {"text":"[Game] Debug mode enabled"}

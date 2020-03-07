@@ -17,6 +17,7 @@ scoreboard players set @s armorLvl 0
 tag @s remove HasElytra
 scoreboard players set @s HasAxe 0
 
+scoreboard players set @s drinkPotion 0
 tag @s remove eleminated
 
 replaceitem entity @s enderchest.0 minecraft:air
@@ -54,3 +55,4 @@ execute if entity @s[team=blue] run tp @s @e[type=minecraft:area_effect_cloud,li
 execute if entity @s[team=yellow] at @e[type=minecraft:area_effect_cloud,sort=random,limit=1,tag=yRespawn] run spawnpoint @s ~ ~1 ~
 execute if entity @s[team=blue] at @e[type=minecraft:area_effect_cloud,sort=random,limit=1,tag=bRespawn] run spawnpoint @s ~ ~1 ~
 tag @s add regiveAll
+tag @s remove NeedInit

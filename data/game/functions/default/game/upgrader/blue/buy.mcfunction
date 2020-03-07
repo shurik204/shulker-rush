@@ -22,5 +22,6 @@ clear @s minecraft:golden_carrot{U:2}
 clear @s minecraft:iron_sword{U:2}
 clear @s minecraft:iron_chestplate{U:2}
 clear @s minecraft:brewing_stand{U:2}
-
+execute if score @s UbuyID matches ..-1 run playsound minecraft:entity.item.break master @s ~ ~ ~ 1000 1.1 1
+#Translate
 execute if score @s UbuyID matches -1 run tellraw @s {"text":"У тебя недостаточно душ для покупки","color":"red"}

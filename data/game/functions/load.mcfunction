@@ -45,6 +45,7 @@ scoreboard objectives add openVillager minecraft.custom:minecraft.talked_to_vill
 scoreboard objectives add settings dummy
 scoreboard objectives add yellow dummy
 scoreboard objectives add blue dummy
+scoreboard objectives add player dummy
 
 scoreboard objectives add height dummy
 scoreboard objectives add death deathCount
@@ -69,6 +70,8 @@ scoreboard objectives add swordLvl dummy
 scoreboard objectives add armorLvl dummy
 scoreboard objectives add food food
 scoreboard objectives add HasAxe dummy
+scoreboard objectives add drinkPotion minecraft.used:minecraft.potion
+scoreboard objectives add LastDeath minecraft.custom:minecraft.time_since_rest
 # Shop
 scoreboard objectives add result dummy
 scoreboard objectives add clearDetect dummy
