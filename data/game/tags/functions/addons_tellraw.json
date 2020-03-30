@@ -1,0 +1,7 @@
+{
+    "replace":false,
+    "values":[
+        "game:addon/tellraw",
+        "game:double_res/addon/tellraw"
+    ]
+}

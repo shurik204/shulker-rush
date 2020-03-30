@@ -7,7 +7,7 @@ execute if score #Effects yellow matches 1.. run effect give @a[distance=..6,tea
 
 # Regeneration workaround using timer
 scoreboard players add @s Timer 1
-execute if score #Effects blue matches 2.. if score @s Timer matches 5.. run effect give @a[distance=..6,team=yellow] minecraft:regeneration 2 1 false
+execute if score #Effects yellow matches 2.. if score @s Timer matches 5.. run effect give @a[distance=..6,team=yellow] minecraft:regeneration 2 1 false
 execute if score @s Timer matches 5.. run scoreboard players set @s Timer 0
 
 execute if score #Effects yellow matches 3.. run effect give @a[distance=..18,team=blue] minecraft:glowing 3 0 false
@@ -15,4 +15,4 @@ execute if score #Effects yellow matches 3.. run effect give @a[distance=..18,te
 data modify entity @s Health set value 30
 execute store result score @s HurtTime run data get entity @s HurtTime
 
-execute if score @s HurtTime matches 1.. if entity @a[distance=..5,team=blue,scores={dealtDamage=10..}] run function game:default/game/shulker/remove_hp_yellow
+execute if score @s HurtTime matches 1.. if entity @a[distance=..5,team=blue,scores={dealtDamage=10..}] run function #game:shulker_remove_hp_yellow

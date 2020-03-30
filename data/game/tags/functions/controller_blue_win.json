@@ -1,6 +1,6 @@
 {
     "replace":false,
     "values":[
-        "game:controller/end/blue_win"
+        "controller:end/blue_win"
     ]
 }

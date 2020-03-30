@@ -1,4 +1,4 @@
-execute at @e[type=area_effect_cloud,tag=bIronGen] positioned ~ ~-1 ~ run function game:default/game/generator/iron/summon
+execute at @e[type=area_effect_cloud,tag=bIronGen] positioned ~ ~-1 ~ run function #game:summon_iron
 
 # Reset cooldown
 execute if score #Forge blue matches 0 run schedule function #game:blue_iron_generator 30t

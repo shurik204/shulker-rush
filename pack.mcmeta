@@ -1,6 +1,6 @@
 {
     "pack": {
-        "pack_format": 4,
-        "description": "Shulker Rush minigame. Code by shurik204 | Teksar Team"
+        "pack_format": 5,
+        "description": "Основной код игры Shulker Rush Classic | Автор: shurik204"
     }
 }

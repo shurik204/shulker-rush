@@ -1,6 +1,6 @@
 {
     "replace":false,
     "values":[
-        "game:controller/init_player"
+        "controller:init_player"
     ]
 }

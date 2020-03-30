@@ -90,14 +90,17 @@ scoreboard objectives add WeaponLVL dummy
 
 scoreboard objectives add Timer dummy
 
+# Addon support
+scoreboard objectives add addon_state dummy
+
 ################
 # Finishing up #
 ################
 
 setworldspawn 997 181 1200
-data modify block 1002 180 1156 Text1 set value '{"text":"Map version: 1.2"}'
-data modify block 1002 180 1156 Text3 set value '{"text":"Undefined"}'
-data modify block 1002 180 1156 Text4 set value '{"text":"Code ver: 1.2.1"}'
+
+execute unless entity @a run say Shulker Rush Classic version 1.2.2
+execute if entity @a run tellraw @a[tag=Dev] "[Game] Reload complete"
 
 # Created by shurik204 | Texar Team
-# Code version 1.2
+# Code version 1.2.2

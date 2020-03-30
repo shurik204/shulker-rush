@@ -7,6 +7,8 @@ execute at @e[type=minecraft:armor_stand,tag=charYellow] as @a[distance=..5,scor
 
 execute at @e[type=minecraft:armor_stand,tag=charBlue] as @a[distance=..5,scores={openVillager=1..},team=!blue] run function game:default/lobby/events/join_blue
 
+function game:addon/switch_condition
+
 effect give @a minecraft:resistance 5 255 true
 effect give @a minecraft:weakness 5 255 true
 effect give @a minecraft:saturation 5 255 true

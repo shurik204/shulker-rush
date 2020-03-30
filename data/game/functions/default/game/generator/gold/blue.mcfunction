@@ -1,4 +1,4 @@
-execute at @e[type=area_effect_cloud,tag=bGoldGen] positioned ~ ~-1 ~ run function game:default/game/generator/gold/summon
+execute at @e[type=area_effect_cloud,tag=bGoldGen] positioned ~ ~-1 ~ run function #game:summon_gold
 
 # Reset cooldown
 execute if score #Forge blue matches 0 run schedule function #game:blue_gold_generator 300t
