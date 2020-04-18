@@ -46,6 +46,7 @@ scoreboard objectives add settings dummy
 scoreboard objectives add yellow dummy
 scoreboard objectives add blue dummy
 scoreboard objectives add player dummy
+scoreboard objectives add join trigger
 
 scoreboard objectives add height dummy
 scoreboard objectives add death deathCount

@@ -18,7 +18,8 @@ execute as @a at @s run playsound minecraft:entity.wither.death player @s ~ ~ ~ 
 execute unless entity @s run team join player @a
 gamemode adventure @a
 scoreboard players set #State var 1
-execute unless entity @s run scoreboard players set #Debug var 0
+# execute unless entity @s run scoreboard players set #Debug var 0
+scoreboard players set #Debug var 0
 scoreboard players set @a drinkPotion 0
 
 schedule clear #game:block_drops_schedule
