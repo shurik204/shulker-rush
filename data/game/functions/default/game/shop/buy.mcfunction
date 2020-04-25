@@ -7,38 +7,40 @@ scoreboard players set @s clearDetect 0
 # 
 clear @s minecraft:black_stained_glass_pane{shop:true}
 
-execute unless score @s clearDetect matches -1 run function #item:check_1
-execute unless score @s clearDetect matches -1 run function #item:check_2
-execute unless score @s clearDetect matches -1 run function #item:check_3
-execute unless score @s clearDetect matches -1 run function #item:check_4
-execute unless score @s clearDetect matches -1 run function #item:check_5
-execute unless score @s clearDetect matches -1 run function #item:check_6
-execute unless score @s clearDetect matches -1 run function #item:check_7
-execute unless score @s clearDetect matches -1 run function #item:check_8
-execute unless score @s clearDetect matches -1 run function #item:check_9
-execute unless score @s clearDetect matches -1 run function #item:check_10
-execute unless score @s clearDetect matches -1 run function #item:check_11
-execute unless score @s clearDetect matches -1 run function #item:check_12
-execute unless score @s clearDetect matches -1 run function #item:check_13
-execute unless score @s clearDetect matches -1 run function #item:check_14
-execute unless score @s clearDetect matches -1 run function #item:check_15
-execute unless score @s clearDetect matches -1 run function #item:check_16
-execute unless score @s clearDetect matches -1 run function #item:check_17
-execute unless score @s clearDetect matches -1 run function #item:check_18
-execute unless score @s clearDetect matches -1 run function #item:check_19
-execute unless score @s clearDetect matches -1 run function #item:check_20
-execute unless score @s clearDetect matches -1 run function #item:check_21
-execute unless score @s clearDetect matches -1 run function #item:check_22
-execute unless score @s clearDetect matches -1 run function #item:check_23
-execute unless score @s clearDetect matches -1 run function #item:check_24
-execute unless score @s clearDetect matches -1 run function #item:check_25
-execute unless score @s clearDetect matches -1 run function #item:check_26
-execute unless score @s clearDetect matches -1 run function #item:check_27
+execute unless score @s clearDetect matches -1 run function #item:check/1
+execute unless score @s clearDetect matches -1 run function #item:check/2
+execute unless score @s clearDetect matches -1 run function #item:check/3
+execute unless score @s clearDetect matches -1 run function #item:check/4
+execute unless score @s clearDetect matches -1 run function #item:check/5
+execute unless score @s clearDetect matches -1 run function #item:check/6
+execute unless score @s clearDetect matches -1 run function #item:check/7
+execute unless score @s clearDetect matches -1 run function #item:check/8
+execute unless score @s clearDetect matches -1 run function #item:check/9
+execute unless score @s clearDetect matches -1 run function #item:check/10
+execute unless score @s clearDetect matches -1 run function #item:check/11
+execute unless score @s clearDetect matches -1 run function #item:check/12
+execute unless score @s clearDetect matches -1 run function #item:check/13
+execute unless score @s clearDetect matches -1 run function #item:check/14
+execute unless score @s clearDetect matches -1 run function #item:check/15
+execute unless score @s clearDetect matches -1 run function #item:check/16
+execute unless score @s clearDetect matches -1 run function #item:check/17
+execute unless score @s clearDetect matches -1 run function #item:check/18
+execute unless score @s clearDetect matches -1 run function #item:check/19
+execute unless score @s clearDetect matches -1 run function #item:check/20
+execute unless score @s clearDetect matches -1 run function #item:check/21
+execute unless score @s clearDetect matches -1 run function #item:check/22
+execute unless score @s clearDetect matches -1 run function #item:check/23
+execute unless score @s clearDetect matches -1 run function #item:check/24
+execute unless score @s clearDetect matches -1 run function #item:check/25
+execute unless score @s clearDetect matches -1 run function #item:check/26
+execute unless score @s clearDetect matches -1 run function #item:check/27
 
-execute if score @s buyID matches 1.. run function game:default/game/shop/sucess
+execute if score @s buyID matches 1.. run function #game:shop/success
 #Translate
 tellraw @s[scores={buyID=-1,clearDetect=-1}] {"text":"У тебя недостаточно ресурсов для покупки","color":"red"}
+#Translate
 tellraw @s[scores={buyID=-2,clearDetect=-1}] {"text":"У тебя уже есть такая броня","color":"red"}
+#Translate
 tellraw @s[scores={buyID=-3,clearDetect=-1}] {"text":"У тебя уже есть броня лучше","color":"red"}
 playsound minecraft:entity.item.break master @s[scores={buyID=..-1,clearDetect=-1}] ~ ~ ~ 1000 1.1 1
 

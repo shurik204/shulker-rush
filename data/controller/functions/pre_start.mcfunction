@@ -4,4 +4,4 @@ tp @a[team=yellow] 988.5 190 1082
 tp @a[team=blue] 1006.5 190 1082
 tag @a[team=!player] add NeedInit
 scoreboard players set #Countdown var 5
-schedule function #game:controller_countdown 2t
+schedule function #controller:countdown 2t

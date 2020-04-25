@@ -1,0 +1,6 @@
+{
+    "replace":false,
+    "values":[
+        "game:default/lobby/events/join_blue"
+    ]
+}

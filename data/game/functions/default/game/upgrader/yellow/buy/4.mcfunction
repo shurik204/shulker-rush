@@ -11,7 +11,7 @@ execute if score #Armor yellow matches 2 run data modify storage minecraft:upgra
 
 scoreboard players add #Armor yellow 1
 
-execute as @a[team=yellow] run function game:default/game/shop/custom/armor/give
+execute as @a[team=yellow] run function #game:shop/item/armor/give
 #Translate
 tellraw @a[team=yellow] {"text":"Твоя команда улучшила зачарования брони","color":"green"}
 playsound minecraft:entity.player.levelup player @s ~ ~ ~ 10000 2 1

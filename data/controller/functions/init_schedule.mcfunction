@@ -1,28 +1,28 @@
 # Remove from schedule lobby functions and start new ones
 # I replace schedule of functions to make sure there are no duplicates
-schedule clear #game:lobby_tick
+schedule clear #game:lobby/tick
 # Block drops
 schedule function #game:block_drops_schedule 5t replace
 
 # Shulker functions
-schedule function #game:shulker_schedule 2t replace
+schedule function #game:shulker/schedule 2t replace
 
 # Generators
-schedule function #game:yellow_iron_generator 2s replace
-schedule function #game:blue_iron_generator 2s replace
-schedule function #game:yellow_gold_generator 2s replace
-schedule function #game:blue_gold_generator 2s replace
-schedule function #game:ruby_generator 45s replace
+schedule function #game:gen/yellow/iron_generator 2s replace
+schedule function #game:gen/blue/iron_generator 2s replace
+schedule function #game:gen/yellow/gold_generator 2s replace
+schedule function #game:gen/blue/gold_generator 2s replace
+schedule function #game:gen/ruby_generator 45s replace
 
 # Game
 schedule function #game:tick 1t replace
-function #game:respawn_schedule
-schedule function #game:player_schedule 1t replace
-schedule function #game:filler_schedule 2t replace
-execute unless score #Debug var matches 1 run schedule function #game:controller_end_condition 1t replace
+function #game:player/respawn/schedule
+schedule function #game:player/schedule 1t replace
+schedule function #game:filler/schedule 2t replace
+execute unless score #Debug var matches 1 run schedule function #controller:end_condition 1t replace
 
 # Shop
-schedule function #game:shop_schedule 1t
+schedule function #game:shop/schedule 1t
 
 #Upgrader
-schedule function #game:upgrader_schedule 3t
+schedule function #game:upgrader/schedule 3t

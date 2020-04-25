@@ -1,2 +1,2 @@
 clear @s gold_nugget 6
-execute as @s run function game:default/game/shop/custom/sword/iron_sword
+execute as @s run function #game:shop/item/sword/iron_sword

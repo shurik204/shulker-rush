@@ -15,4 +15,4 @@ execute if score #Effects yellow matches 3.. run effect give @a[distance=..18,te
 data modify entity @s Health set value 30
 execute store result score @s HurtTime run data get entity @s HurtTime
 
-execute if score @s HurtTime matches 1.. if entity @a[distance=..5,team=blue,scores={dealtDamage=10..}] run function #game:shulker_remove_hp_yellow
+execute if score @s HurtTime matches 1.. if entity @a[distance=..5,team=blue,scores={dealtDamage=10..}] run function #game:shulker/remove_hp_yellow

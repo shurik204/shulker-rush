@@ -1,0 +1,8 @@
+{
+    "replace":false,
+    "values":[
+        "#game:player/actionbar",
+        "#game:player/foodlevel",
+        "#game:player/sword_upgrade"
+    ]
+}

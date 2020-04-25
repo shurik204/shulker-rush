@@ -35,4 +35,4 @@ summon minecraft:area_effect_cloud 1046.5 179.5 1078.5 {Age: -2147483648, Durati
 
 summon minecraft:shulker 960 178 1092 {NoAI:1b,Color:4b,CustomNameVisible:0b,CustomName:'{"text":"❤❤❤❤❤❤❤","color":"red"}',Tags:["yBed","game"]}
 summon minecraft:shulker 1034 178 1092 {NoAI:1b,Color:9b,CustomNameVisible:0b,CustomName:'{"text":"❤❤❤❤❤❤❤","color":"red"}',Tags:["bBed","game"]}
-scoreboard players set @e[type=shulker,tag=game] HP 7
+execute as @e[type=shulker,tag=game] run scoreboard players operation @s HP = #MaxShulkerHealth var

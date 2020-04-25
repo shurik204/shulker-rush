@@ -1,5 +1,3 @@
-gamerule fallDamage true
-
 ######################
 # Shop related stuff #
 ######################
@@ -8,7 +6,7 @@ gamerule fallDamage true
 data modify storage minecraft:shop mod set from storage minecraft:shop Template
 # Modifing template with enabled modificators
 
-function #game:controller_init_shop
+function #controller:init_shop
 
 # Copy from modded template to teams' shops 
 data modify storage minecraft:shop Yellow set from storage minecraft:shop mod
@@ -25,6 +23,7 @@ data modify storage minecraft:upgrader Blue set from storage minecraft:upgrader 
 # Resetting everything #
 ########################
 
+scoreboard players set #MaxShulkerHealth var 7
 scoreboard players add #Current GameID 1
 # Upgrades
 scoreboard players set #Effects yellow 0
@@ -52,18 +51,18 @@ title @a subtitle {"text":"Игра началась!","color":"yellow"}
 kill @e[tag=game]
 kill @e[type=item]
 # And summon new ones
-function #game:controller_summon
+function #controller:summon
 
 # Schedule functions
-function #game:controller_init_schedule
+function #controller:init_schedule
 
 # Init players
-execute as @a[tag=NeedInit] run function #game:controller_init_player
+execute as @a[tag=NeedInit] run function #controller:init_player
 
 execute as @a at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 0.8 0.8 1
 
 #Clear the arena to make sure nothing left
-execute as @e[type=area_effect_cloud,limit=1,tag=Fill] at @s run function #game:filler_clear
+execute as @e[type=area_effect_cloud,limit=1,tag=Fill] at @s run function #game:filler/clear
 
 execute at @e[type=minecraft:area_effect_cloud,tag=Chest] run data modify block ~ ~ ~ Items set value []
 #Translate
@@ -71,4 +70,39 @@ execute at @e[type=minecraft:area_effect_cloud,tag=Upgrader] unless block ~ ~-1 
 #Translate
 execute at @e[type=minecraft:area_effect_cloud,tag=Chest] unless block ~ ~ ~ minecraft:chest run tellraw @a [{"text":"[Game] One of your chest markers is placed incorrectly!"}]
 #Translate
-execute if score #Debug var matches 1 run tellraw @a {"text":"[Game] Debug mode enabled. Have fun :D\n[Game] To end the game run /function #game:controller_end"}
+execute if score #Debug var matches 1 run tellraw @a {"text":"[Game] Debug mode enabled. Have fun :D\n[Game] To end the game run /function #controller:end"}
+
+team modify yellow nametagVisibility hideForOtherTeams
+team modify blue nametagVisibility hideForOtherTeams
+team modify player nametagVisibility never
+
+gamerule announceAdvancements false
+gamerule commandBlockOutput false
+gamerule disableElytraMovementCheck true
+gamerule disableRaids true
+gamerule doDaylightCycle false
+gamerule doEntityDrops false
+gamerule doFireTick false
+gamerule doImmediateRespawn true
+gamerule doInsomnia false
+gamerule doLimitedCrafting true
+gamerule doMobLoot false
+gamerule doMobSpawning false
+gamerule doTileDrops true
+gamerule doWeatherCycle false
+gamerule drowningDamage true
+gamerule fallDamage true
+gamerule fireDamage true
+gamerule keepInventory false
+gamerule logAdminCommands false
+gamerule maxCommandChainLength 32768
+gamerule mobGriefing false
+gamerule maxEntityCramming 1
+gamerule naturalRegeneration true
+gamerule randomTickSpeed 0
+gamerule reducedDebugInfo true
+gamerule sendCommandFeedback false
+execute if score #Debug var matches 1 run gamerule sendCommandFeedback true
+gamerule showDeathMessages false
+gamerule spawnRadius 1
+gamerule spectatorsGenerateChunks false

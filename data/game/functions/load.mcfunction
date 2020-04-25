@@ -100,7 +100,8 @@ scoreboard objectives add addon_state dummy
 
 setworldspawn 997 181 1200
 
-execute unless entity @a run say Shulker Rush Classic version 1.2.2
+data modify storage minecraft:info CodeVersion set value 1.2
+execute unless entity @a run say Shulker Rush Classic version 1.2 loaded!
 execute if entity @a run tellraw @a[tag=Dev] "[Game] Reload complete"
 
 # Created by shurik204 | Texar Team

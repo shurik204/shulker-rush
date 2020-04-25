@@ -1,3 +1,3 @@
-execute unless score @s GameID = #Current GameID run function game:default/game/events/spectator_joined
+execute unless score @s GameID = #Current GameID run function #game:event/spectator_joined
 
-execute if score @s GameID = #Current GameID run function game:default/game/events/player_rejoined
+execute if score @s GameID = #Current GameID run function #game:event/player_rejoined

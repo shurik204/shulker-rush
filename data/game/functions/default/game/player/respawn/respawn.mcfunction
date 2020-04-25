@@ -1,3 +1,8 @@
-execute as @a[distance=..2,tag=!eleminated,tag=regiveAll,scores={LastDeath=2..}] run function game:default/game/player/respawn/respawn_alive
+tag @s[team=!player] add eleminated
 
-execute as @a[distance=..2,tag=eleminated] run function game:default/game/player/respawn/respawn_eleminated
+execute if entity @s[team=yellow] if entity @e[type=shulker,tag=yBed] run tag @s remove eleminated
+execute if entity @s[team=blue] if entity @e[type=shulker,tag=bBed] run tag @s remove eleminated
+
+execute if entity @s[tag=!eleminated,tag=regiveAll,scores={LastDeath=2..}] run function #game:player/respawn/alive
+
+execute if entity @s[team=!player,tag=eleminated,tag=regiveAll] run function #game:player/respawn/eleminated

@@ -56,3 +56,4 @@ execute if entity @s[team=yellow] at @e[type=minecraft:area_effect_cloud,sort=ra
 execute if entity @s[team=blue] at @e[type=minecraft:area_effect_cloud,sort=random,limit=1,tag=bRespawn] run spawnpoint @s ~ ~1 ~
 tag @s add regiveAll
 tag @s remove NeedInit
+tag @s remove NoRespawn
