@@ -6,7 +6,7 @@
 data modify storage minecraft:shop mod set from storage minecraft:shop Template
 # Modifing template with enabled modificators
 
-function #controller:init_shop
+function #controller:pre_init_shop
 
 # Copy from modded template to teams' shops 
 data modify storage minecraft:shop Yellow set from storage minecraft:shop mod
@@ -16,14 +16,20 @@ data modify storage minecraft:shop Blue set from storage minecraft:shop mod
 data modify storage minecraft:shop Yellow prepend from storage minecraft:shop YellowGlass
 data modify storage minecraft:shop Blue prepend from storage minecraft:shop BlueGlass
 
+function #controller:post_init_shop
+
 data modify storage minecraft:upgrader Yellow set from storage minecraft:upgrader Template
 data modify storage minecraft:upgrader Blue set from storage minecraft:upgrader Template
+
+function #controller:init_upgrader
 
 ########################
 # Resetting everything #
 ########################
 
 scoreboard players set #MaxShulkerHealth var 7
+scoreboard players set #KillHeight var 130
+
 scoreboard players add #Current GameID 1
 # Upgrades
 scoreboard players set #Effects yellow 0
@@ -97,7 +103,7 @@ gamerule keepInventory false
 gamerule logAdminCommands false
 gamerule maxCommandChainLength 32768
 gamerule mobGriefing false
-gamerule maxEntityCramming 1
+gamerule maxEntityCramming 40
 gamerule naturalRegeneration true
 gamerule randomTickSpeed 0
 gamerule reducedDebugInfo true

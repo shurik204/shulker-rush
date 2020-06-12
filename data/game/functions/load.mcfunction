@@ -100,9 +100,17 @@ scoreboard objectives add addon_state dummy
 
 setworldspawn 997 181 1200
 
-data modify storage minecraft:info CodeVersion set value 1.2
+data modify storage minecraft:info CodeVersion set value "1.2.2"
 execute unless entity @a run say Shulker Rush Classic version 1.2 loaded!
 execute if entity @a run tellraw @a[tag=Dev] "[Game] Reload complete"
+scoreboard players set #ShulkerRushClassic var 73456
 
+#Final changes to map 1.2 version
+worldborder center 995 1085
+worldborder set 400 0
+worldborder warning distance 0
+worldborder warning time 0
+
+scoreboard players set #Dev var 0
 # Created by shurik204 | Texar Team
 # Code version 1.2.2

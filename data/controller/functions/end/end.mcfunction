@@ -65,3 +65,9 @@ schedule clear #controller:end_condition
 
 # And schedule lobby function 1 tick after end triggered
 schedule function #game:lobby/tick 1t
+
+
+# Update info on the sign
+data modify block 1002 180 1156 Text1 set value '{"text":"Map version: 1.2"}'
+data modify block 1002 180 1156 Text3 set value '{"text":"17.05.20"}'
+data modify block 1002 180 1156 Text4 set value '{"text":"Code ver: 1.2.2"}'
