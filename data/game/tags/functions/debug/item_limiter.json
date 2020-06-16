@@ -1,0 +1,6 @@
+{
+    "replace":false,
+    "values":[
+        "game:default/debug/item_limiter"
+    ]
+}

@@ -83,7 +83,7 @@ scoreboard objectives add statCoins2 dummy
 scoreboard objectives add statCoins3 dummy
 
 #Uprgader
-# Full scores' names are "Uprgader buyID" and "Upgrader clearDetect"
+# Full scores' names are "Upgrader buyID" and "Upgrader clearDetect"
 scoreboard objectives add UbuyID dummy
 scoreboard objectives add UclearDetect dummy
 scoreboard objectives add Uresult dummy
@@ -93,6 +93,10 @@ scoreboard objectives add Timer dummy
 
 # Addon support
 scoreboard objectives add addon_state dummy
+
+# Debug variables
+scoreboard objectives add Debug dummy
+scoreboard objectives add debug_item_limit dummy
 
 ################
 # Finishing up #
@@ -104,6 +108,9 @@ data modify storage minecraft:info CodeVersion set value "1.2.2"
 execute unless entity @a run say Shulker Rush Classic version 1.2 loaded!
 execute if entity @a run tellraw @a[tag=Dev] "[Game] Reload complete"
 scoreboard players set #ShulkerRushClassic var 73456
+# Old versions - no score
+# 1.15.2 (Version 1.2) - 73456
+# 1.16 (Version 1.3) - 74437
 
 #Final changes to map 1.2 version
 worldborder center 995 1085

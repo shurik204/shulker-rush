@@ -20,7 +20,7 @@ execute if score #Start var matches 0 if score #Count yellow matches 0 if score 
 
 execute if score #Start var matches ..-1 run playsound minecraft:entity.item.break block @a ~ ~ ~ 0.6 1.2 0.4
 
-execute if score #Debug var matches 1 run scoreboard players set #Start var 0
+execute if score #Enabled Debug matches 1 run scoreboard players set #Start var 0
 #Translate
 execute if score #Start var matches -1 run title @a actionbar {"text":"Недостаточно игроков для начала игры","color":"red"}
 #Translate

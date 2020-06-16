@@ -6,4 +6,4 @@ execute if score #Forge yellow matches 1 run schedule function #game:gen/yellow/
 execute if score #Forge yellow matches 2 run schedule function #game:gen/yellow/iron_generator 20t
 execute if score #Forge yellow matches 3 run schedule function #game:gen/yellow/iron_generator 14t
 #Debug mode
-execute if score #Debug var matches 1 run schedule function #game:gen/yellow/iron_generator 10t replace
+execute if score #Enabled Debug matches 1 run schedule function #game:gen/yellow/iron_generator 10t replace

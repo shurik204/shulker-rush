@@ -6,4 +6,4 @@ execute if score #Forge blue matches 1 run schedule function #game:gen/blue/gold
 execute if score #Forge blue matches 2 run schedule function #game:gen/blue/gold_generator 220t
 execute if score #Forge blue matches 3 run schedule function #game:gen/blue/gold_generator 160t
 #Debug modet
-execute if score #Debug var matches 1 run schedule function #game:gen/blue/gold_generator 20t
+execute if score #Enabled Debug matches 1 run schedule function #game:gen/blue/gold_generator 20t

@@ -5,7 +5,7 @@ team modify yellow nametagVisibility always
 team modify blue nametagVisibility always
 team modify player nametagVisibility always
 
-function controller:end/reset_map
+function #controller:reset_map
 
 kill @e[tag=game]
 kill @e[type=item]
@@ -32,7 +32,7 @@ gamemode adventure @a
 # Set gamestate to 1 (Lobby)
 scoreboard players set #State var 1
 # Disable debug flag
-scoreboard players set #Debug var 0
+scoreboard players set #Enabled Debug 0
 # Reset drink potion score just to be sure that nothing weird will happen
 scoreboard players set @a drinkPotion 0
 # Set team to "player" for all players
@@ -63,6 +63,8 @@ schedule clear #game:shop/schedule
 schedule clear #game:upgrader/schedule
 schedule clear #controller:end_condition
 
+#Re-schedule join handler if needed
+schedule function #game:join_handler 1t
 # And schedule lobby function 1 tick after end triggered
 schedule function #game:lobby/tick 1t
 

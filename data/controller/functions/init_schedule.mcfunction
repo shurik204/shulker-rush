@@ -19,7 +19,7 @@ schedule function #game:tick 1t replace
 function #game:player/respawn/schedule
 schedule function #game:player/schedule 1t replace
 schedule function #game:filler/schedule 2t replace
-execute unless score #Debug var matches 1 run schedule function #controller:end_condition 1t replace
+execute unless score #Enabled Debug matches 1 run schedule function #controller:end_condition 1t replace
 
 # Shop
 schedule function #game:shop/schedule 1t

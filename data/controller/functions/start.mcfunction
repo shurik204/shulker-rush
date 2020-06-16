@@ -47,9 +47,15 @@ scoreboard players set #Forge blue 0
 scoreboard players set #Souls yellow 0
 scoreboard players set #Souls blue 0
 
+# Make sure to clear display objectives
+scoreboard objectives setdisplay belowName
+scoreboard objectives setdisplay list
+scoreboard objectives setdisplay sidebar
+
 fill 985 192 1085 991 188 1079 air
 fill 1003 192 1085 1009 188 1079 air
 fill 986 176 1135 1008 190 1158 air
+
 kill @e[tag=Lobby]
 title @a subtitle {"text":"Игра началась!","color":"yellow"}
 
@@ -76,7 +82,7 @@ execute at @e[type=minecraft:area_effect_cloud,tag=Upgrader] unless block ~ ~-1 
 #Translate
 execute at @e[type=minecraft:area_effect_cloud,tag=Chest] unless block ~ ~ ~ minecraft:chest run tellraw @a [{"text":"[Game] One of your chest markers is placed incorrectly!"}]
 #Translate
-execute if score #Debug var matches 1 run tellraw @a {"text":"[Game] Debug mode enabled. Have fun :D\n[Game] To end the game run /function #controller:end"}
+execute if score #Enabled Debug matches 1 run tellraw @a {"text":"[Game] Debug mode enabled.\n[Game] To end the game run /function #controller:end"}
 
 team modify yellow nametagVisibility hideForOtherTeams
 team modify blue nametagVisibility hideForOtherTeams
@@ -107,8 +113,9 @@ gamerule maxEntityCramming 40
 gamerule naturalRegeneration true
 gamerule randomTickSpeed 0
 gamerule reducedDebugInfo true
+execute if score #Enabled Debug matches 1 run gamerule reducedDebugInfo false
 gamerule sendCommandFeedback false
-execute if score #Debug var matches 1 run gamerule sendCommandFeedback true
+execute if score #Enabled Debug matches 1 run gamerule sendCommandFeedback true
 gamerule showDeathMessages false
 gamerule spawnRadius 1
 gamerule spectatorsGenerateChunks false

@@ -19,7 +19,7 @@ execute as @a if score @s join matches 180420 run function #game:event/player_jo
 execute as @a[tag=NeedInit] run function #controller:init_player
 
 # Anti-gamemode-changer
-execute if score #Debug var matches 0 as @a[gamemode=!adventure,gamemode=!spectator,tag=!Dev] run function #game:event/spectator_joined
+execute if score #Enabled Debug matches 0 as @a[gamemode=!adventure,gamemode=!spectator,tag=!Dev] run function #game:event/spectator_joined
 
 execute at @e[type=minecraft:area_effect_cloud,tag=Respawn] run fill ~ ~1 ~ ~ ~3 ~ air destroy
 
