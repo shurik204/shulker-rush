@@ -1,4 +1,4 @@
 team join yellow @s
 #Translate
-title @s actionbar [{"text":"Ты присоединился к","color":"gray"},{"text":" Жёлтой ","color":"yellow"},{"text":"команде","color":"gray"}]
+title @s actionbar {"storage": "game:lang", "nbt": "Player.JoinedYellow", "interpret": true}
 playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 10000 1 0.1

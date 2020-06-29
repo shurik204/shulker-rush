@@ -11,5 +11,5 @@ execute if score #Weapon blue matches 2 run data modify storage minecraft:upgrad
 
 scoreboard players add #Weapon blue 1
 #Translate
-tellraw @a[team=blue] {"text":"Твоя команда улучшила зачарования мечей","color":"green"}
+tellraw @a[team=blue] {"storage": "game:lang", "nbt": "Upgrader.UpgradeWeapons", "interpret": true}
 playsound minecraft:entity.player.levelup player @s ~ ~ ~ 10000 2 1

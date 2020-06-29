@@ -11,5 +11,5 @@ execute if score #Forge yellow matches 2 run data modify storage minecraft:upgra
 
 scoreboard players add #Forge yellow 1
 #Translate
-tellraw @a[team=yellow] {"text":"Твоя команда улучшила генератор ресурсов","color":"green"}
+tellraw @a[team=yellow] {"storage": "game:lang", "nbt": "Upgrader.UpgradeForge", "interpret": true}
 playsound minecraft:entity.player.levelup player @s ~ ~ ~ 10000 2 1

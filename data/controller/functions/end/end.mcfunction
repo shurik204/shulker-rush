@@ -11,9 +11,33 @@ kill @e[tag=game]
 kill @e[type=item]
 
 # Create spawn back from template
-# TODO: Move spawn file to datapack
 execute if block 997 180 1139 air run setblock 986 176 1135 minecraft:structure_block{author:"shurik204",posX:0,posY:0,posZ:0,sizeX:23,sizeY:15,sizeZ:24,name:"game:spawn",mode:"LOAD",powered:0b,showboundingbox:1b}
 execute if block 997 180 1139 air run setblock 986 177 1135 minecraft:redstone_block
+
+team remove yellow
+team remove blue
+team remove player
+team add yellow {"text":"Yellow","color":"yellow"}
+team add blue {"text":"Blue","color":"aqua"}
+team modify yellow collisionRule pushOtherTeams
+team modify blue collisionRule pushOtherTeams
+team modify yellow deathMessageVisibility never
+team modify blue deathMessageVisibility never
+team modify yellow color yellow
+team modify blue color aqua
+team modify yellow friendlyFire false
+team modify blue friendlyFire false
+team modify yellow nametagVisibility always
+team modify blue nametagVisibility always
+team modify yellow seeFriendlyInvisibles true
+team modify blue seeFriendlyInvisibles true
+
+team add player {"text":"Spectators","color":"gray"}
+team modify player nametagVisibility always
+team modify player deathMessageVisibility never
+team modify player color gray
+team modify player collisionRule never
+team modify player friendlyFire false
 
 # Set title delay for "(Team) won" text
 title @a times 3 46 24
@@ -70,6 +94,6 @@ schedule function #game:lobby/tick 1t
 
 
 # Update info on the sign
-data modify block 1002 180 1156 Text1 set value '{"text":"Map version: 1.2"}'
-data modify block 1002 180 1156 Text3 set value '{"text":"17.05.20"}'
-data modify block 1002 180 1156 Text4 set value '{"text":"Code ver: 1.2.2"}'
+data modify block 1002 180 1156 Text1 set value '{"text":"Map version: 1.3"}'
+data modify block 1002 180 1156 Text3 set value '{"text":"29.06.20"}'
+data modify block 1002 180 1156 Text4 set value '{"text":"Code ver: 1.3"}'

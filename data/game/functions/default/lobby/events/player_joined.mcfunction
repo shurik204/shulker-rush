@@ -4,4 +4,4 @@ clear @s
 gamemode adventure
 title @s times 0 30 30
 title @s title ""
-title @s subtitle {"text":"Shulker Rush Classic","color":"gold"}
+title @s subtitle {"storage": "game:lang", "nbt": "Lobby.JoinMsg", "interpret": true}

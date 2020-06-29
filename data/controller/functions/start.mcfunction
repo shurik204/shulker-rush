@@ -57,7 +57,7 @@ fill 1003 192 1085 1009 188 1079 air
 fill 986 176 1135 1008 190 1158 air
 
 kill @e[tag=Lobby]
-title @a subtitle {"text":"Игра началась!","color":"yellow"}
+title @a subtitle {"storage": "game:lang","nbt": "Countdown.StartedSubtitle", "interpret": true}
 
 # Remove old entities
 kill @e[tag=game]
@@ -78,11 +78,11 @@ execute as @e[type=area_effect_cloud,limit=1,tag=Fill] at @s run function #game:
 
 execute at @e[type=minecraft:area_effect_cloud,tag=Chest] run data modify block ~ ~ ~ Items set value []
 #Translate
-execute at @e[type=minecraft:area_effect_cloud,tag=Upgrader] unless block ~ ~-1 ~ minecraft:hopper run tellraw @a [{"text":"[Game] One of your upgrade markers is placed incorrectly! (Must be one block above the hopper)"}]
+execute at @e[type=minecraft:area_effect_cloud,tag=Upgrader] unless block ~ ~-1 ~ minecraft:hopper run tellraw @a [{"translate":"[Game] One of your upgrade markers is placed incorrectly! (Must be one block above the hopper)"}]
 #Translate
-execute at @e[type=minecraft:area_effect_cloud,tag=Chest] unless block ~ ~ ~ minecraft:chest run tellraw @a [{"text":"[Game] One of your chest markers is placed incorrectly!"}]
+execute at @e[type=minecraft:area_effect_cloud,tag=Chest] unless block ~ ~ ~ minecraft:chest run tellraw @a [{"translate":"[Game] One of your chest markers is placed incorrectly!"}]
 #Translate
-execute if score #Enabled Debug matches 1 run tellraw @a {"text":"[Game] Debug mode enabled.\n[Game] To end the game run /function #controller:end"}
+execute if score #Enabled Debug matches 1 run tellraw @a {"translate":"[Game] Debug mode enabled.\n[Game] To end the game run /function #controller:end"}
 
 team modify yellow nametagVisibility hideForOtherTeams
 team modify blue nametagVisibility hideForOtherTeams

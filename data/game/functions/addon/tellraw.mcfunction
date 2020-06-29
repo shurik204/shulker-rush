@@ -1,1 +1,1 @@
-tellraw @s {"text":"Установленные дополнения:","color":"blue"}
+tellraw @s {"text":"Installed addons:","color":"blue"}

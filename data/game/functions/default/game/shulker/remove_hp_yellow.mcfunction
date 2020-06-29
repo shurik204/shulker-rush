@@ -5,9 +5,9 @@ execute if entity @s[scores={HP=1..}] run particle minecraft:block minecraft:yel
 execute if entity @s[scores={HP=..0}] run function #game:shulker/kill
 
 #Translate
-execute if entity @s[scores={HP=..0}] run title @a[team=!yellow] subtitle {"text":"Шалкер жёлтых уничтожен","color":"green"}
+execute if entity @s[scores={HP=..0}] run title @a[team=!yellow] subtitle {"storage": "game:lang", "nbt": "Shulker.Destroyed.Yellow", "interpret": true}
 #Translate
-execute if entity @s[scores={HP=..0}] run title @a[team=yellow] subtitle {"text":"Твой Шалкер был уничтожен","color":"red"}
+execute if entity @s[scores={HP=..0}] run title @a[team=yellow] subtitle {"storage": "game:lang", "nbt": "Shulker.Destroyed.Your", "interpret": true}
 
 # effect give @a[team=yellow] minecraft:blindness 1 0 true
 # I make this check not to launch rename routine if shulker is dead

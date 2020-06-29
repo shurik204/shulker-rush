@@ -1,0 +1,24 @@
+{
+    "criteria": {
+        "hit_with_arrow": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "damage": {
+                    "blocked": false,
+                    "type": {
+                        "is_projectile": true,
+                        "direct_entity": {
+                            "type": "minecraft:arrow"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "hit_with_arrow"
+        ]
+    ],
+    "parent": "game:root"
+}

@@ -11,5 +11,5 @@ execute if score #Effects blue matches 2 run data modify storage minecraft:upgra
 
 scoreboard players add #Effects blue 1
 #Translate
-tellraw @a[team=blue] {"text":"Твоя команда улучшила магические эффекты","color":"green"}
+tellraw @a[team=blue] {"storage": "game:lang", "nbt": "Upgrader.UpgradeMagicEffects", "interpret": true}
 playsound minecraft:entity.player.levelup player @s ~ ~ ~ 10000 2 1

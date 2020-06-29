@@ -25,4 +25,4 @@ clear @s minecraft:brewing_stand{U:2}
 
 execute if score @s UbuyID matches ..-1 run playsound minecraft:entity.item.break master @s ~ ~ ~ 1000 1.1 1
 #Translate
-execute if score @s UbuyID matches -1 run tellraw @s {"text":"У тебя недостаточно душ для покупки","color":"red"}
+execute if score @s UbuyID matches -1 run tellraw @s {"storage": "game:lang", "nbt": "Upgrader.NotEnoughSouls", "interpret": true}

@@ -13,5 +13,5 @@ scoreboard players add #Armor blue 1
 
 execute as @a[team=blue] run function #game:shop/item/armor/give
 #Translate
-tellraw @a[team=blue] {"text":"Твоя команда улучшила зачарования брони","color":"green"}
+tellraw @a[team=blue] {"storage": "game:lang", "nbt": "Upgrader.UpgradeArmor", "interpret": true}
 playsound minecraft:entity.player.levelup player @s ~ ~ ~ 10000 2 1

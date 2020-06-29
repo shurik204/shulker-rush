@@ -7,7 +7,7 @@
 scoreboard objectives add dealtDamage minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add HurtTime dummy
 scoreboard objectives add HP dummy
-execute unless score #Max HP matches 1.. run scoreboard players set #Max HP 7
+# execute unless score #Max HP matches 1.. run scoreboard players set #Max HP 7
 
 ################
 # Create teams #
@@ -16,6 +16,8 @@ team add yellow {"text":"Yellow","color":"yellow"}
 team add blue {"text":"Blue","color":"aqua"}
 team modify yellow collisionRule pushOtherTeams
 team modify blue collisionRule pushOtherTeams
+team modify yellow deathMessageVisibility never
+team modify blue deathMessageVisibility never
 team modify yellow color yellow
 team modify blue color aqua
 team modify yellow friendlyFire false
@@ -26,8 +28,9 @@ team modify yellow seeFriendlyInvisibles true
 team modify blue seeFriendlyInvisibles true
 
 team add player {"text":"Spectators","color":"gray"}
-team modify player color gray
 team modify player nametagVisibility always
+team modify player deathMessageVisibility never
+team modify player color gray
 team modify player collisionRule never
 team modify player friendlyFire false
 
@@ -37,7 +40,7 @@ team modify player friendlyFire false
 #####################
 scoreboard objectives add var dummy
 # If something goes wrong with score reset to state "Lobby"
-execute unless score #State var matches 0.. run scoreboard players set #State var 0
+# execute unless score #State var matches 0.. run scoreboard players set #State var 0
 
 scoreboard objectives add openVillager minecraft.custom:minecraft.talked_to_villager
 
@@ -96,7 +99,7 @@ scoreboard objectives add addon_state dummy
 
 # Debug variables
 scoreboard objectives add Debug dummy
-scoreboard objectives add debug_item_limit dummy
+# scoreboard objectives add debug_item_limit dummy
 
 ################
 # Finishing up #
@@ -104,10 +107,11 @@ scoreboard objectives add debug_item_limit dummy
 
 setworldspawn 997 181 1200
 
-data modify storage minecraft:info CodeVersion set value "1.2.2"
-execute unless entity @a run say Shulker Rush Classic version 1.2 loaded!
+data modify storage minecraft:info CodeVersion set value "1.3"
+
+execute unless entity @a run say Shulker Rush Classic version 1.3 loaded!
 execute if entity @a run tellraw @a[tag=Dev] "[Game] Reload complete"
-scoreboard players set #ShulkerRushClassic var 73456
+scoreboard players set #ShulkerRushClassic var 74437
 # Old versions - no score
 # 1.15.2 (Version 1.2) - 73456
 # 1.16 (Version 1.3) - 74437

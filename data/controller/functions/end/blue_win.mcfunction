@@ -1,4 +1,4 @@
-title @a title {"text":"Синие победили!","color":"aqua","bold":true}
+title @a title {"storage": "game:lang","nbt": "Win.Blue","interpret": true}
 title @a actionbar ""
 
 function #controller:end

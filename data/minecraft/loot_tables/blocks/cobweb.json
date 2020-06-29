@@ -1,4 +1,5 @@
 {
+  "replace":true,
   "type": "minecraft:block",
   "pools": [
     {
@@ -6,7 +7,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:cobweb"
+          "name": "minecraft:cobweb",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CanPlaceOn:[\"#game:place\"],HideFlags:127,CanDestroy:[\"#game:destroy\"]}"
+            }
+          ]
         }
       ]
     }

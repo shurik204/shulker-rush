@@ -6,7 +6,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:end_stone"
+          "name": "minecraft:end_stone",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CanPlaceOn:[\"#game:place\"],HideFlags:127,CanDestroy:[\"#game:destroy\"]}"
+            }
+          ]
         }
       ]
     }

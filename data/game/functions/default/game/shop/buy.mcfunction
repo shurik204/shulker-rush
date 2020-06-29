@@ -37,11 +37,11 @@ execute unless score @s clearDetect matches -1 run function #item:check/27
 
 execute if score @s buyID matches 1.. run function #game:shop/success
 #Translate
-tellraw @s[scores={buyID=-1,clearDetect=-1}] {"text":"У тебя недостаточно ресурсов для покупки","color":"red"}
+tellraw @s[scores={buyID=-1,clearDetect=-1}] {"storage": "game:lang", "nbt": "Shop.NotEnoughRes", "interpret": true}
 #Translate
-tellraw @s[scores={buyID=-2,clearDetect=-1}] {"text":"У тебя уже есть такая броня","color":"red"}
+tellraw @s[scores={buyID=-2,clearDetect=-1}] {"storage": "game:lang", "nbt": "Shop.HaveThisArmor", "interpret": true}
 #Translate
-tellraw @s[scores={buyID=-3,clearDetect=-1}] {"text":"У тебя уже есть броня лучше","color":"red"}
+tellraw @s[scores={buyID=-3,clearDetect=-1}] {"storage": "game:lang", "nbt": "Shop.HaveBetterArmor", "interpret": true}
 playsound minecraft:entity.item.break master @s[scores={buyID=..-1,clearDetect=-1}] ~ ~ ~ 1000 1.1 1
 
 # Remove barriers
