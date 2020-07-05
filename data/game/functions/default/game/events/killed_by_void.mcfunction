@@ -12,6 +12,6 @@ execute if entity @s[team=yellow] unless entity @a[scores={kill=1..},team=blue] 
 tag @s remove KilledByVoid
 tag @s add regiveAll
 
-execute at @s[team=!player] as @e[type=minecraft:item,distance=..2] store result entity @s Motion[1] double 6.0 run data get entity @s Motion[1] 1
+execute at @s[team=!player] as @e[type=minecraft:item,distance=..2,nbt={Age:0s}] store result entity @s Motion[1] double 4.5 run data get entity @s Motion[1] 1
 
 scoreboard players set @s death 0

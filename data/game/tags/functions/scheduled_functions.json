@@ -1,16 +1,17 @@
 {
     "replace":false,
     "values":[
+        "#game:tick",
         "#game:gen/yellow/iron_generator",
         "#game:gen/blue/iron_generator",
         "#game:gen/yellow/gold_generator",
         "#game:gen/blue/gold_generator",
-        "#game:gen/ruby_generator",
-        "#game:tick",
+        "#game:gen/ruby/schedule",
         "#game:player/respawn/schedule",
         "#game:player/schedule",
         "#game:filler/schedule",
         "#game:shop/schedule",
-        "#game:upgrader/schedule"
+        "#game:upgrader/schedule",
+        "#game:upgrader/particles"
     ]
 }

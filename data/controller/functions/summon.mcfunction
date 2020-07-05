@@ -31,6 +31,12 @@ summon minecraft:area_effect_cloud 962.5 179.0 1083.5 {Age: -2147483648, Duratio
 summon minecraft:area_effect_cloud 1032.5 179.0 1083.5 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, CustomName:"", CustomNameVisible:1b, Tags: ["Tutorial","Upgrader","game","bUpgrader"]}
 execute as @e[type=minecraft:area_effect_cloud,tag=Upgrader] run data modify entity @s CustomName set from storage game:lang Entity.Upgrader
 
+execute at @e[type=minecraft:area_effect_cloud,tag=Upgrader] run summon minecraft:armor_stand ~ ~-1.755 ~.25 {Tags:["decoration","Upgrader","game"],Pose:{Head:[-90.0f,0.0f,0.0f]},ArmorItems:[{},{},{},{id:"minecraft:command_block",Count:1b}],NoGravity:1b,Invisible:1b,Invulnerable:1b,DisabledSlots:2096896}
+
+# :)
+execute unless entity shurik204 at @e[type=minecraft:area_effect_cloud,tag=Upgrader] run summon minecraft:armor_stand ~ ~-2.855 ~ {Passengers:[{id:"minecraft:falling_block",BlockState:{Name:"minecraft:netherite_block"},Time:2,NoGravity:1b,Tags:["decoration","Upgrader","game"]}],NoGravity:1b,Tags:["decoration","Upgrader","game"],Invisible:1b,Invulnerable:1b,DisabledSlots:2096896}
+execute if entity shurik204 at @e[type=minecraft:area_effect_cloud,tag=Upgrader] run summon minecraft:armor_stand ~ ~-2.855 ~ {Passengers:[{id:"minecraft:falling_block",BlockState:{Name:"minecraft:polished_basalt"},Time:2,NoGravity:1b,Tags:["decoration","Upgrader","game"]}],NoGravity:1b,Tags:["decoration","Upgrader","game"],Invisible:1b,Invulnerable:1b,DisabledSlots:2096896}
+
 # Spawnpoint yellow
 summon minecraft:area_effect_cloud 948.5 179.5 1078.5 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["Respawn","yRespawn","game"]}
 # Spawnpoint blue
@@ -38,5 +44,6 @@ summon minecraft:area_effect_cloud 1046.5 179.5 1078.5 {Age: -2147483648, Durati
 
 summon minecraft:shulker 960 178 1092 {NoAI:1b,Color:4b,CustomNameVisible:0b,CustomName:"",Tags:["Bed","yBed","game"]}
 summon minecraft:shulker 1034 178 1092 {NoAI:1b,Color:9b,CustomNameVisible:0b,CustomName:"",Tags:["Bed","bBed","game"]}
-execute as @e[type=shulker,tag=Bed] run scoreboard players operation @s HP = #MaxShulkerHealth var
+
+execute as @e[type=shulker,tag=Bed] run scoreboard players operation @s HP = #MaxShulkerHealth settings
 execute as @e[type=minecraft:shulker,tag=Bed] run function #game:shulker/update_name

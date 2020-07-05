@@ -39,6 +39,8 @@ team modify player color gray
 team modify player collisionRule never
 team modify player friendlyFire false
 
+# Set difficulty back to easy
+difficulty easy
 # Set title delay for "(Team) won" text
 title @a times 3 46 24
 # Clear actionbar
@@ -72,7 +74,7 @@ schedule clear #game:gen/yellow/iron_generator
 schedule clear #game:gen/blue/iron_generator
 schedule clear #game:gen/yellow/gold_generator
 schedule clear #game:gen/blue/gold_generator
-schedule clear #game:gen/ruby_generator
+schedule clear #game:gen/ruby/schedule
 
 # Game
 schedule clear #game:tick
@@ -85,6 +87,9 @@ schedule clear #game:shop/schedule
 
 #Upgrader
 schedule clear #game:upgrader/schedule
+# New particles
+schedule clear #game:upgrader/particles
+
 schedule clear #controller:end_condition
 
 #Re-schedule join handler if needed
@@ -92,8 +97,24 @@ schedule function #game:join_handler 1t
 # And schedule lobby function 1 tick after end triggered
 schedule function #game:lobby/tick 1t
 
+# Version 1.3.1
+execute as @e[type=minecraft:armor_stand,tag=charYellow] run data modify entity @s CustomName set from storage game:lang Lobby.CharYellow
+execute as @e[type=minecraft:armor_stand,tag=charBlue] run data modify entity @s CustomName set from storage game:lang Lobby.CharBlue
+execute as @e[type=minecraft:area_effect_cloud,tag=label.creator] run data modify entity @s CustomName set from storage game:lang Lobby.Creator
+execute as @e[type=minecraft:area_effect_cloud,tag=label.originallyby] run data modify entity @s CustomName set from storage game:lang Lobby.OriginallyBy
+
+data modify block 997 180 1140 Text4 set from storage game:lang Lobby.RightClick
+data modify block 994 180 1152 Text4 set from storage game:lang Lobby.RightClick
+
+data modify block 997 180 1140 Text1 set from storage game:lang Lobby.StartSign[0]
+data modify block 997 180 1140 Text2 set from storage game:lang Lobby.StartSign[1]
+
+# Add tag to teams "chars'"
+tag @e[type=minecraft:armor_stand,tag=charYellow] add TeamChar
+tag @e[type=minecraft:armor_stand,tag=charBlue] add TeamChar
+
 
 # Update info on the sign
 data modify block 1002 180 1156 Text1 set value '{"text":"Map version: 1.3"}'
-data modify block 1002 180 1156 Text3 set value '{"text":"29.06.20"}'
-data modify block 1002 180 1156 Text4 set value '{"text":"Code ver: 1.3"}'
+data modify block 1002 180 1156 Text3 set value '{"text":"05.07.20"}'
+data modify block 1002 180 1156 Text4 set value '{"text":"Code ver: 1.3.1"}'

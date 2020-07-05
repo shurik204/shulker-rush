@@ -21,4 +21,4 @@ execute as @e[type=minecraft:area_effect_cloud,tag=Fill] run scoreboard players 
 scoreboard players operation BlueShulkerHP Debug = @e[type=minecraft:shulker,tag=bBed,limit=1] HP
 scoreboard players operation YellowShulkerHP Debug = @e[type=minecraft:shulker,tag=yBed,limit=1] HP
 
-scoreboard players operation KillHeight Debug = #KillHeight var
+scoreboard players operation KillHeight Debug = #KillHeight settings

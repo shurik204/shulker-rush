@@ -1,7 +1,4 @@
-execute positioned ~ ~ ~-0.2 if entity @a[distance=..0.7,gamemode=!spectator] positioned ~ ~ ~1.2 if block ~ ~ ~ air if block ~ ~-1 ~ #game:terracotta run tp @s ~ ~ ~
-execute positioned ~ ~ ~0.2 if entity @a[distance=..0.7,gamemode=!spectator] positioned ~ ~ ~-1.2 if block ~ ~ ~ air if block ~ ~-1 ~ #game:terracotta run tp @s ~ ~ ~
-execute positioned ~-0.2 ~ ~ if entity @a[distance=..0.7,gamemode=!spectator] positioned ~1.2 ~ ~ if block ~ ~ ~ air if block ~ ~-1 ~ #game:terracotta run tp @s ~ ~ ~
-execute positioned ~0.2 ~ ~ if entity @a[distance=..0.7,gamemode=!spectator] positioned ~-1.2 ~ ~ if block ~ ~ ~ air if block ~ ~-1 ~ #game:terracotta run tp @s ~ ~ ~
+execute at @s if entity @a[gamemode=!spectator,distance=..2] run function #game:shulker/movement/move
 
 execute if score #Effects yellow matches 1.. run effect give @a[distance=..6,team=blue] minecraft:mining_fatigue 3 0 false
 
@@ -12,7 +9,7 @@ execute if score @s Timer matches 5.. run scoreboard players set @s Timer 0
 
 execute if score #Effects yellow matches 3.. run effect give @a[distance=..18,team=blue] minecraft:glowing 3 0 false
 
-data modify entity @s Health set value 30
+data modify entity @s Health set value 30.0f
 execute store result score @s HurtTime run data get entity @s HurtTime
 
 execute if score @s HurtTime matches 1.. if entity @a[distance=..5,team=blue,scores={dealtDamage=10..}] run function #game:shulker/remove_hp_yellow

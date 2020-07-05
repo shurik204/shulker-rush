@@ -1,4 +1,4 @@
-# Moved the schedule here because of the bug that lead to infinite game ending. Now I can remove schedule clear from lobby/tick :D
+# Moved the schedule here because of the bug that lead to infinite game ending. Now I can remove "schedule clear #controller:end_condition" from lobby/tick :D
 schedule function #controller:end_condition 7t
 
 scoreboard players set #Count yellow 0

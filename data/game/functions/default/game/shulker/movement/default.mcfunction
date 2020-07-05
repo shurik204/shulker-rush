@@ -1,0 +1,4 @@
+execute positioned ~ ~ ~-0.2 if entity @a[distance=..0.7,gamemode=!spectator] positioned ~ ~ ~1.2 if block ~ ~ ~ air if block ~ ~-1 ~ #game:terracotta run tp @s ~ ~ ~
+execute positioned ~ ~ ~0.2 if entity @a[distance=..0.7,gamemode=!spectator] positioned ~ ~ ~-1.2 if block ~ ~ ~ air if block ~ ~-1 ~ #game:terracotta run tp @s ~ ~ ~
+execute positioned ~-0.2 ~ ~ if entity @a[distance=..0.7,gamemode=!spectator] positioned ~1.2 ~ ~ if block ~ ~ ~ air if block ~ ~-1 ~ #game:terracotta run tp @s ~ ~ ~
+execute positioned ~0.2 ~ ~ if entity @a[distance=..0.7,gamemode=!spectator] positioned ~-1.2 ~ ~ if block ~ ~ ~ air if block ~ ~-1 ~ #game:terracotta run tp @s ~ ~ ~

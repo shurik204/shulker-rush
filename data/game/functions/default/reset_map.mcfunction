@@ -1,0 +1,44 @@
+# This function is used to wipe all data from map
+
+scoreboard players reset * armorLvl
+scoreboard players reset * ArmorType
+scoreboard players reset * blue
+scoreboard players reset * buyID
+scoreboard players reset * clearDetect
+scoreboard players reset * dealtDamage
+scoreboard players reset * death
+scoreboard players reset * deathCount
+scoreboard players reset * Debug
+scoreboard players reset * drinkPotion
+scoreboard players reset * food
+scoreboard players reset * GameID
+scoreboard players set #GameID GameID 1
+scoreboard players reset * HasAxe
+scoreboard players reset * height
+scoreboard players reset * HP
+scoreboard players reset * HurtTime
+scoreboard players reset * join
+scoreboard players reset * kill
+scoreboard players reset * killCount
+scoreboard players reset * LastDeath
+scoreboard players reset * leaveGame
+scoreboard players reset * openVillager
+scoreboard players reset * placeCobweb
+scoreboard players reset * placeGlassB
+scoreboard players reset * placeGlassR
+scoreboard players reset * placeGlassY
+scoreboard players reset * placeObsidian
+scoreboard players reset * placePlanks
+scoreboard players reset * player
+scoreboard players reset * result
+scoreboard players reset * settings
+scoreboard players reset * statCoins1
+scoreboard players reset * statCoins2
+scoreboard players reset * statCoins3
+scoreboard players reset * swordLvl
+scoreboard players reset * Timer
+scoreboard players reset * UbuyID
+scoreboard players reset * UclearDetect
+scoreboard players reset * Uresult
+scoreboard players reset * WeaponLVL
+scoreboard players reset * yellow

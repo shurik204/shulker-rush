@@ -5,5 +5,5 @@ execute if score #Forge blue matches 0 run schedule function #game:gen/blue/iron
 execute if score #Forge blue matches 1 run schedule function #game:gen/blue/iron_generator 24t
 execute if score #Forge blue matches 2 run schedule function #game:gen/blue/iron_generator 20t
 execute if score #Forge blue matches 3 run schedule function #game:gen/blue/iron_generator 14t
-#Debug modet
+#Debug mode
 execute if score #Enabled Debug matches 1 run schedule function #game:gen/blue/iron_generator 10t replace

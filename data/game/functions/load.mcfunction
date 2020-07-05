@@ -7,7 +7,6 @@
 scoreboard objectives add dealtDamage minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add HurtTime dummy
 scoreboard objectives add HP dummy
-# execute unless score #Max HP matches 1.. run scoreboard players set #Max HP 7
 
 ################
 # Create teams #
@@ -95,7 +94,8 @@ scoreboard objectives add WeaponLVL dummy
 scoreboard objectives add Timer dummy
 
 # Addon support
-scoreboard objectives add addon_state dummy
+# Removed (At least for now)
+# scoreboard objectives add addon_state dummy
 
 # Debug variables
 scoreboard objectives add Debug dummy
@@ -107,10 +107,10 @@ scoreboard objectives add Debug dummy
 
 setworldspawn 997 181 1200
 
-data modify storage minecraft:info CodeVersion set value "1.3"
-
+data modify storage minecraft:info MinecraftVersion set value "1.16"
 execute unless entity @a run say Shulker Rush Classic version 1.3 loaded!
 execute if entity @a run tellraw @a[tag=Dev] "[Game] Reload complete"
+
 scoreboard players set #ShulkerRushClassic var 74437
 # Old versions - no score
 # 1.15.2 (Version 1.2) - 73456
@@ -124,4 +124,4 @@ worldborder warning time 0
 
 scoreboard players set #Dev var 0
 # Created by shurik204 | Texar Team
-# Code version 1.2.2
+# Code version 1.3.1

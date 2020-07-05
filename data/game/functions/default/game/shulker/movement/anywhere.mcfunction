@@ -1,0 +1,4 @@
+execute positioned ~ ~ ~-0.2 if entity @a[distance=..0.7,gamemode=!spectator] positioned ~ ~ ~1.2 if block ~ ~ ~ air unless block ~ ~-1 ~ minecraft:air run tp @s ~ ~ ~
+execute positioned ~ ~ ~0.2 if entity @a[distance=..0.7,gamemode=!spectator] positioned ~ ~ ~-1.2 if block ~ ~ ~ air unless block ~ ~-1 ~ minecraft:air run tp @s ~ ~ ~
+execute positioned ~-0.2 ~ ~ if entity @a[distance=..0.7,gamemode=!spectator] positioned ~1.2 ~ ~ if block ~ ~ ~ air unless block ~ ~-1 ~ minecraft:air run tp @s ~ ~ ~
+execute positioned ~0.2 ~ ~ if entity @a[distance=..0.7,gamemode=!spectator] positioned ~-1.2 ~ ~ if block ~ ~ ~ air unless block ~ ~-1 ~ minecraft:air run tp @s ~ ~ ~

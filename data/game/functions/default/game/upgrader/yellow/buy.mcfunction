@@ -18,10 +18,10 @@ execute if score @s Uresult matches 1.. run function #item:upgrader/yellow/check
 
 execute if score @s UbuyID matches 1.. run function #game:upgrader/yellow/success
 
-clear @s minecraft:golden_carrot{U:2}
-clear @s minecraft:iron_sword{U:2}
-clear @s minecraft:iron_chestplate{U:2}
-clear @s minecraft:brewing_stand{U:2}
+clear @s minecraft:golden_carrot{Up:true}
+clear @s minecraft:iron_sword{Up:true}
+clear @s minecraft:iron_chestplate{Up:true}
+clear @s minecraft:brewing_stand{Up:true}
 
 execute if score @s UbuyID matches ..-1 run playsound minecraft:entity.item.break master @s ~ ~ ~ 1000 1.1 1
 #Translate
