@@ -49,13 +49,14 @@ execute if entity @s[scores={ArmorType=3,armorLvl=2}] run replaceitem block 998 
 #Translate
 execute if entity @s[scores={ArmorType=3,armorLvl=3}] run replaceitem block 998 162 1105 container.0 diamond_boots{HideFlags:127,AttributeModifiers:[{AttributeName:"minecraft:generic.armor",Name:"generic.armor",Amount:9.0d,Slot:"feet",Operation:0,UUID:[I; 111,11,1,1111]}],Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:protection",lvl:3}],display:{Name:'{"text":"Diamond Armor","italic":false,"color":"yellow"}',Lore:['[{"translate":"enchantment.minecraft.protection","italic":false,"color":"gray"},{"text":" III","color":"gray","italic":false}]']},Unbreakable:1b}
 
-execute if block 998 162 1105 minecraft:light_gray_shulker_box{Items:[{id:"minecraft:leather_boots",Slot:0b}]} run data modify block 998 162 1105 Items[0].tag.display.Name set from storage game:lang Item.Armor.Leather
-execute if block 998 162 1105 minecraft:light_gray_shulker_box{Items:[{id:"minecraft:chainmail_boots",Slot:0b}]} run data modify block 998 162 1105 Items[0].tag.display.Name set from storage game:lang Item.Armor.Chainmail
-execute if block 998 162 1105 minecraft:light_gray_shulker_box{Items:[{id:"minecraft:iron_boots",Slot:0b}]} run data modify block 998 162 1105 Items[0].tag.display.Name set from storage game:lang Item.Armor.Iron
-execute if block 998 162 1105 minecraft:light_gray_shulker_box{Items:[{id:"minecraft:diamond_boots",Slot:0b}]} run data modify block 998 162 1105 Items[0].tag.display.Name set from storage game:lang Item.Armor.Diamond
+execute if score @s ArmorType matches 0 run data modify block 998 162 1105 Items[0].tag.display.Name set from storage game:lang Item.Armor.Leather
+execute if score @s ArmorType matches 1 run data modify block 998 162 1105 Items[0].tag.display.Name set from storage game:lang Item.Armor.Chainmail
+execute if score @s ArmorType matches 2 run data modify block 998 162 1105 Items[0].tag.display.Name set from storage game:lang Item.Armor.Iron
+execute if score @s ArmorType matches 3 run data modify block 998 162 1105 Items[0].tag.display.Name set from storage game:lang Item.Armor.Diamond
 
 loot replace entity @s armor.feet mine 998 162 1105 air{drop:1b}
 
+#Helmet
 replaceitem entity @s[team=blue] armor.head leather_helmet{HideFlags:127,AttributeModifiers:[{AttributeName:"minecraft:generic.armor",Name:"generic.armor",Amount:1.0d,Slot:"feet",Operation:0,UUID:[I; 222,11,1,1111]}],Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:"minecraft:vanishing_curse",lvl:1}],display:{color:2870015,Name:'{"translate":"item.minecraft.leather_helmet","italic":false,"color":"yellow"}'},Unbreakable:1b}
 replaceitem entity @s[team=yellow] armor.head leather_helmet{HideFlags:127,AttributeModifiers:[{AttributeName:"minecraft:generic.armor",Name:"generic.armor",Amount:1.0d,Slot:"feet",Operation:0,UUID:[I; 222,11,1,1111]}],Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:"minecraft:vanishing_curse",lvl:1}],display:{color:16775959,Name:'{"translate":"item.minecraft.leather_helmet","italic":false,"color":"yellow"}'},Unbreakable:1b}
 

@@ -33,7 +33,7 @@ execute if score #Start var matches ..-1 run playsound minecraft:entity.item.bre
 #Translate
 execute if score #Start var matches -1 run title @a actionbar {"storage": "game:lang", "nbt": "Controller.NotEnoughPlayers", "interpret": true}
 #Translate
-execute if score #Start var matches -2 run title @a actionbar {"storage": "game:lang", "nbt": "Controller.Controller.BlueEmpty", "interpret": true}
+execute if score #Start var matches -2 run title @a actionbar {"storage": "game:lang", "nbt": "Controller.BlueEmpty", "interpret": true}
 #Translate
 execute if score #Start var matches -3 run title @a actionbar {"storage": "game:lang", "nbt": "Controller.YellowEmpty", "interpret": true}
 #Translate

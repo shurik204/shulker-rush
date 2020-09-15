@@ -1,3 +1,6 @@
+# Update translations
+function #game:language
+
 gamerule fallDamage false
 gamerule sendCommandFeedback false
 

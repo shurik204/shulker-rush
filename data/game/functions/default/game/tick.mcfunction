@@ -1,25 +1,18 @@
 schedule function #game:tick 1t
 
-execute as @a store result score @s height run data get entity @s Pos[1]
-execute as @a[team=!player,tag=!regiveAll] if score @s height <= #KillHeight settings run function #game:event/killed_by_void
-
-execute as @a[scores={death=1..}] run function #game:event/killed_by_player
-
-execute as @a[scores={kill=1..}] run function #game:event/killed_player
-
-
 # Handle player join
 execute as @a[tag=!Joined] at @s run function #game:event/player_joined
 
-# Check if undead player has axe and store it in scoreboard
-execute as @a store result score @s[tag=!regiveAll] HasAxe run clear @s minecraft:golden_axe 0
-# Potion functionality
-execute as @a[scores={drinkPotion=1..}] at @s run function #game:event/used_explosive_potion
 # If player has score, join to game
-execute as @a if score @s join matches 180420 run function #game:event/player_join_game
+execute as @a if score @s join matches 1.. run function #game:event/player_join_game
 
 # Init just joined players
 execute as @a[tag=NeedInit] run function #controller:init_player
+
+execute as @a[team=!player] at @s run function #game:player/tick
+
+# Fix kill detection system
+execute as @a if score @s kill matches 1.. at @s run function #game:event/killed_player
 
 # Anti-gamemode-changer
 execute unless score #Enabled Debug matches 1.. as @a[gamemode=!adventure,gamemode=!spectator,tag=!Dev] run function #game:event/spectator_joined

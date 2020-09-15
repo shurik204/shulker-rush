@@ -5,3 +5,6 @@ gamemode adventure
 title @s times 0 30 30
 title @s title ""
 title @s subtitle {"storage": "game:lang", "nbt": "Lobby.JoinMsg", "interpret": true}
+
+tellraw @s {"storage": "game:lang","nbt": "Game.WelcomeMsg","interpret": true}
+tag @s add Joined

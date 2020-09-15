@@ -20,7 +20,8 @@ execute if score #DropRubyOnStart settings matches 1 run function #game:gen/ruby
 # Trigger respawn function to give items
 function #game:player/respawn/schedule
 # And schedule other
-schedule function #game:tick 1t replace
+# Main
+function #game:tick
 schedule function #game:player/schedule 1t replace
 schedule function #game:filler/schedule 2t replace
 execute unless score #Enabled Debug matches 1 run schedule function #controller:end_condition 1t replace

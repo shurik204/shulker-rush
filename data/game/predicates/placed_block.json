@@ -1,0 +1,75 @@
+{
+    "condition": "minecraft:alternative",
+    "terms": [
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+                "placeCobweb":{
+                    "min": 1,
+                    "max": 1000
+                }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+                "placeEndStone":{
+                    "min": 1,
+                    "max": 1000
+                }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+                "placeGlassB":{
+                    "min": 1,
+                    "max": 1000
+                }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+                "placeGlassY":{
+                    "min": 1,
+                    "max": 1000
+                }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+                "placeGlassR":{
+                    "min": 1,
+                    "max": 1000
+                }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+                "placeObsidian":{
+                    "min": 1,
+                    "max": 1000
+                }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+                "placePlanks":{
+                    "min": 1,
+                    "max": 1000
+                }
+            }
+        }
+    ]
+}

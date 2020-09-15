@@ -1,0 +1,6 @@
+{
+    "replace": false,
+    "values": [
+        "game:default/game/events/player_join_game/join_yellow"
+    ]
+}
