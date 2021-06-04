@@ -10,7 +10,7 @@ execute as @a[gamemode=!spectator] run scoreboard players add #Count var 1
 
 # Moved this here to make function count players without team only after this function
 # If enabled, join random team for all players without team (Condition: there must be at least 2 players)
-execute if score #JoinTeamForPlayers settings matches 1 if score #Count var matches 2.. as @a[team=player] run function game:default/lobby/events/join_random_team
+execute if score #JoinTeamForPlayers settings matches 1 if score #Count var matches 2.. as @a[team=player] run function #game:event/player_join_game/join_random_team
 
 execute as @a[team=yellow,gamemode=!spectator] run scoreboard players add #Count yellow 1
 execute as @a[team=blue,gamemode=!spectator] run scoreboard players add #Count blue 1

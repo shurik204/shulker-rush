@@ -1,0 +1,3 @@
+execute if score #Souls blue matches 1..3 at @e[type=minecraft:area_effect_cloud,tag=bUpgrader] run particle minecraft:soul ~ ~0.1 ~ 0.13 0 0.13 0.01 1 force @a
+execute if score #Souls blue matches 4..9 at @e[type=minecraft:area_effect_cloud,tag=bUpgrader] run particle minecraft:soul ~ ~0.1 ~ 0.13 0 0.13 0.01 2 force @a
+execute if score #Souls blue matches 10.. at @e[type=minecraft:area_effect_cloud,tag=bUpgrader] run particle minecraft:soul ~ ~0.1 ~ 0.13 0 0.13 0.01 4 force @a

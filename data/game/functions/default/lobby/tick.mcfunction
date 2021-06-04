@@ -10,7 +10,7 @@ execute unless score #DisableTeamSelect settings matches 1 as @e[type=minecraft:
 execute at @e[type=minecraft:armor_stand,tag=charYellow] as @a[distance=..5,scores={openVillager=1..},team=!yellow] run function #game:lobby/join_yellow
 execute at @e[type=minecraft:armor_stand,tag=charBlue] as @a[distance=..5,scores={openVillager=1..},team=!blue] run function #game:lobby/join_blue
 
-# function #game:addon/switch_check
+function #game:addon/tick
 
 effect give @a minecraft:resistance 5 255 true
 effect give @a minecraft:weakness 5 255 true

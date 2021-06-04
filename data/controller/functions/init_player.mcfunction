@@ -18,7 +18,7 @@ tag @s remove HasElytra
 scoreboard players set @s HasAxe 0
 
 scoreboard players set @s drinkPotion 0
-tag @s remove eleminated
+tag @s remove eliminated
 
 replaceitem entity @s enderchest.0 minecraft:air
 replaceitem entity @s enderchest.1 minecraft:air
@@ -57,3 +57,94 @@ execute if entity @s[team=blue] at @e[type=minecraft:area_effect_cloud,sort=rand
 tag @s add regiveAll
 tag @s remove NeedInit
 tag @s remove NoRespawn
+tag @s remove update_list
+
+execute if score #Enabled Debug matches 1.. run say Init function done
+# Remove some attributes
+attribute @s minecraft:generic.armor modifier remove 0-0-0-0-0
+attribute @s minecraft:generic.armor modifier remove 0-0-0-0-1
+attribute @s minecraft:generic.armor modifier remove 0-0-0-0-2
+attribute @s minecraft:generic.armor modifier remove 0-0-0-0-3
+attribute @s minecraft:generic.armor modifier remove 0-0-0-0-4
+attribute @s minecraft:generic.armor modifier remove 0-0-0-0-5
+attribute @s minecraft:generic.armor modifier remove 0-0-0-0-6
+attribute @s minecraft:generic.armor modifier remove 0-0-0-0-7
+attribute @s minecraft:generic.armor modifier remove 0-0-0-0-8
+attribute @s minecraft:generic.armor modifier remove 0-0-0-0-9
+
+attribute @s minecraft:generic.armor_toughness modifier remove 0-0-0-0-0
+attribute @s minecraft:generic.armor_toughness modifier remove 0-0-0-0-1
+attribute @s minecraft:generic.armor_toughness modifier remove 0-0-0-0-2
+attribute @s minecraft:generic.armor_toughness modifier remove 0-0-0-0-3
+attribute @s minecraft:generic.armor_toughness modifier remove 0-0-0-0-4
+attribute @s minecraft:generic.armor_toughness modifier remove 0-0-0-0-5
+attribute @s minecraft:generic.armor_toughness modifier remove 0-0-0-0-6
+attribute @s minecraft:generic.armor_toughness modifier remove 0-0-0-0-7
+attribute @s minecraft:generic.armor_toughness modifier remove 0-0-0-0-8
+attribute @s minecraft:generic.armor_toughness modifier remove 0-0-0-0-9
+
+attribute @s minecraft:generic.attack_damage modifier remove 0-0-0-0-0
+attribute @s minecraft:generic.attack_damage modifier remove 0-0-0-0-1
+attribute @s minecraft:generic.attack_damage modifier remove 0-0-0-0-2
+attribute @s minecraft:generic.attack_damage modifier remove 0-0-0-0-3
+attribute @s minecraft:generic.attack_damage modifier remove 0-0-0-0-4
+attribute @s minecraft:generic.attack_damage modifier remove 0-0-0-0-5
+attribute @s minecraft:generic.attack_damage modifier remove 0-0-0-0-6
+attribute @s minecraft:generic.attack_damage modifier remove 0-0-0-0-7
+attribute @s minecraft:generic.attack_damage modifier remove 0-0-0-0-8
+attribute @s minecraft:generic.attack_damage modifier remove 0-0-0-0-9
+
+attribute @s minecraft:generic.attack_speed modifier remove 0-0-0-0-0
+attribute @s minecraft:generic.attack_speed modifier remove 0-0-0-0-1
+attribute @s minecraft:generic.attack_speed modifier remove 0-0-0-0-2
+attribute @s minecraft:generic.attack_speed modifier remove 0-0-0-0-3
+attribute @s minecraft:generic.attack_speed modifier remove 0-0-0-0-4
+attribute @s minecraft:generic.attack_speed modifier remove 0-0-0-0-5
+attribute @s minecraft:generic.attack_speed modifier remove 0-0-0-0-6
+attribute @s minecraft:generic.attack_speed modifier remove 0-0-0-0-7
+attribute @s minecraft:generic.attack_speed modifier remove 0-0-0-0-8
+attribute @s minecraft:generic.attack_speed modifier remove 0-0-0-0-9
+
+attribute @s minecraft:generic.knockback_resistance modifier remove 0-0-0-0-0
+attribute @s minecraft:generic.knockback_resistance modifier remove 0-0-0-0-1
+attribute @s minecraft:generic.knockback_resistance modifier remove 0-0-0-0-2
+attribute @s minecraft:generic.knockback_resistance modifier remove 0-0-0-0-3
+attribute @s minecraft:generic.knockback_resistance modifier remove 0-0-0-0-4
+attribute @s minecraft:generic.knockback_resistance modifier remove 0-0-0-0-5
+attribute @s minecraft:generic.knockback_resistance modifier remove 0-0-0-0-6
+attribute @s minecraft:generic.knockback_resistance modifier remove 0-0-0-0-7
+attribute @s minecraft:generic.knockback_resistance modifier remove 0-0-0-0-8
+attribute @s minecraft:generic.knockback_resistance modifier remove 0-0-0-0-9
+
+attribute @s minecraft:generic.luck modifier remove 0-0-0-0-0
+attribute @s minecraft:generic.luck modifier remove 0-0-0-0-1
+attribute @s minecraft:generic.luck modifier remove 0-0-0-0-2
+attribute @s minecraft:generic.luck modifier remove 0-0-0-0-3
+attribute @s minecraft:generic.luck modifier remove 0-0-0-0-4
+attribute @s minecraft:generic.luck modifier remove 0-0-0-0-5
+attribute @s minecraft:generic.luck modifier remove 0-0-0-0-6
+attribute @s minecraft:generic.luck modifier remove 0-0-0-0-7
+attribute @s minecraft:generic.luck modifier remove 0-0-0-0-8
+attribute @s minecraft:generic.luck modifier remove 0-0-0-0-9
+
+attribute @s minecraft:generic.max_health modifier remove 0-0-0-0-0
+attribute @s minecraft:generic.max_health modifier remove 0-0-0-0-1
+attribute @s minecraft:generic.max_health modifier remove 0-0-0-0-2
+attribute @s minecraft:generic.max_health modifier remove 0-0-0-0-3
+attribute @s minecraft:generic.max_health modifier remove 0-0-0-0-4
+attribute @s minecraft:generic.max_health modifier remove 0-0-0-0-5
+attribute @s minecraft:generic.max_health modifier remove 0-0-0-0-6
+attribute @s minecraft:generic.max_health modifier remove 0-0-0-0-7
+attribute @s minecraft:generic.max_health modifier remove 0-0-0-0-8
+attribute @s minecraft:generic.max_health modifier remove 0-0-0-0-9
+
+attribute @s minecraft:generic.movement_speed modifier remove 0-0-0-0-0
+attribute @s minecraft:generic.movement_speed modifier remove 0-0-0-0-1
+attribute @s minecraft:generic.movement_speed modifier remove 0-0-0-0-2
+attribute @s minecraft:generic.movement_speed modifier remove 0-0-0-0-3
+attribute @s minecraft:generic.movement_speed modifier remove 0-0-0-0-4
+attribute @s minecraft:generic.movement_speed modifier remove 0-0-0-0-5
+attribute @s minecraft:generic.movement_speed modifier remove 0-0-0-0-6
+attribute @s minecraft:generic.movement_speed modifier remove 0-0-0-0-7
+attribute @s minecraft:generic.movement_speed modifier remove 0-0-0-0-8
+attribute @s minecraft:generic.movement_speed modifier remove 0-0-0-0-9

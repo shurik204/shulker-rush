@@ -8,3 +8,4 @@ title @s subtitle {"storage": "game:lang", "nbt": "Lobby.JoinMsg", "interpret": 
 
 tellraw @s {"storage": "game:lang","nbt": "Game.WelcomeMsg","interpret": true}
 tag @s add Joined
+tag @s remove update_list

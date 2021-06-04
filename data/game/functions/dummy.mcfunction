@@ -1,0 +1,1 @@
+# Used to make addons load after the game datapack.

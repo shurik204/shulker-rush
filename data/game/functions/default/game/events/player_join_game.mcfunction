@@ -5,8 +5,8 @@ execute if score #yellow_team_score var > #blue_team_score var if entity @s[tag=
 
 execute if score #yellow_team_score var = #blue_team_score var if entity @s[tag=can_join_yellow,tag=can_join_blue] run function #game:event/player_join_game/join_random_team
 
-execute if entity @s[team=player,tag=can_join_yellow,tag=!can_join_blue] run function #game:event/player_join_game/join_yellow
-execute if entity @s[team=player,tag=!can_join_yellow,tag=can_join_blue] run function #game:event/player_join_game/join_blue
+# execute if entity @s[team=player,tag=can_join_yellow,tag=!can_join_blue] run function #game:event/player_join_game/join_yellow
+# execute if entity @s[team=player,tag=!can_join_yellow,tag=can_join_blue] run function #game:event/player_join_game/join_blue
 
 execute if entity @s[team=player,tag=!can_join_yellow,tag=!can_join_blue] run tellraw @s {"storage": "game:lang", "nbt": "Game.CantJoin", "interpret": true}
 execute if entity @s[team=player] run scoreboard players enable @s join

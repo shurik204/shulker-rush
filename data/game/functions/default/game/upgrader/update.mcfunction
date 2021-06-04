@@ -1,3 +1,5 @@
-execute if entity @s[tag=yUpgrader] run data modify block ~ ~ ~ Items set from storage minecraft:upgrader Yellow
+execute if entity @s[tag=yUpgrader] run function #game:upgrader/yellow/execute
 
-execute if entity @s[tag=bUpgrader] run data modify block ~ ~ ~ Items set from storage minecraft:upgrader Blue
+execute if entity @s[tag=bUpgrader] run function #game:upgrader/blue/execute
+
+function #game:upgrader/buy

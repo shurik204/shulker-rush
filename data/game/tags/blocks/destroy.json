@@ -1,5 +1,5 @@
 {
-    "replace":true,
+    "replace": false,
     "values":[
         "#game:stained_glass",
         "minecraft:oak_planks",

@@ -11,8 +11,6 @@ data modify storage minecraft:shop BlueGlass set value {Slot: 15b, id: "minecraf
 
 data modify storage minecraft:upgrader Template set value [{Slot: 0b, id: "minecraft:emerald", Count: 1b, tag: {HideFlags: 127, U: 1, Up: true, display: {Lore: ['[{"text":"Price: ","color":"gray","italic":false},{"text":"1 Soul ","color":"aqua","italic":false}]', '{"text":""}', '{"text":"+1 ❤ for Shulker","color":"gray","italic":false}', '{"text":""}', '{"text":"▶ Click here to buy","color":"yellow","italic":false}'], Name: '{"color":"green","italic":false,"text":"Shulker"}'}}}, {Slot: 1b, id: "minecraft:golden_carrot", Count: 1b, tag: {HideFlags: 127, U: 1, Up: true, display: {Lore: ['[{"text":"Price: ","color":"gray","italic":false},{"text":"3 Souls ","color":"aqua","italic":false}]', '{"text":""}', '{"text":"+ Mining fatigue to enemies","color":"gray","italic":false}', '{"text":"around your Shulker","color":"gray","italic":false}', '{"text":""}', '{"text":"▶ Click here to buy","color":"yellow","italic":false}'], Name: '{"color":"green","italic":false,"text":"Magic effects I"}'}}}, {Slot: 2b, id: "minecraft:iron_sword", Count: 1b, tag: {HideFlags: 127, U: 1, Up: 1b, display: {Lore: ['[{"text":"Price: ","color":"gray","italic":false},{"text":"4 Souls ","color":"aqua","italic":false}]', '{"text":""}', '{"text":"+ Sharpness I","color":"gray","italic":false}', '{"text":"for swords","color":"gray","italic":false}', '{"text":""}', '{"text":"▶ Click here to buy","color":"yellow","italic":false}'], Name: '{"color":"green","italic":false,"text":"Armor enchantment I"}'}}}, {Slot: 3b, id: "minecraft:iron_chestplate", Count: 1b, tag: {HideFlags: 127, U: 1, Up: true, display: {Lore: ['[{"text":"Price: ","color":"gray","italic":false},{"text":"4 Souls ","color":"aqua","italic":false}]', '{"text":""}', '{"text":"+ Protection I","color":"gray","italic":false}', '{"text":"for armor","color":"gray","italic":false}', '{"text":""}', '{"text":"▶ Click here to buy","color":"yellow","italic":false}'], Name: '{"color":"green","italic":false,"text":"Weapon enchantment I"}'}}}, {Slot: 4b, id: "minecraft:brewing_stand", Count: 1b, tag: {HideFlags: 127, U: 1, Up: true, display: {Lore: ['[{"text":"Price: ","color":"gray","italic":false},{"text":"2 Souls ","color":"aqua","italic":false}]', '{"text":""}', '{"text":"+ 33% resources","color":"gray","italic":false}', '{"text":"in Generator","color":"gray","italic":false}', '{"text":""}', '{"text":"▶ Click here to buy","color":"yellow","italic":false}'], Name: '{"color":"green","italic":false,"text":"Forge upgrade I"}'}}}]
 
-function #controller:translate_shop
-
 # Modifing template with enabled addons
 function #controller:pre_init_shop
 
@@ -24,12 +22,32 @@ data modify storage minecraft:shop Blue set from storage minecraft:shop Template
 data modify storage minecraft:shop Yellow append from storage minecraft:shop YellowGlass
 data modify storage minecraft:shop Blue append from storage minecraft:shop BlueGlass
 
+function #controller:translate_shop
+
 function #controller:post_init_shop
+
+# Make sure that data in storage is the same as will be in the shops
+data modify block 998 162 1105 Items set from storage minecraft:shop Yellow
+data modify storage minecraft:shop Yellow set from block 998 162 1105 Items
+
+data modify block 998 162 1105 Items set from storage minecraft:shop Blue
+data modify storage minecraft:shop Blue set from block 998 162 1105 Items
+
+data modify block 998 162 1105 Items set value []
 
 data modify storage minecraft:upgrader Yellow set from storage minecraft:upgrader Template
 data modify storage minecraft:upgrader Blue set from storage minecraft:upgrader Template
 
 function #controller:init_upgrader
+
+# Make sure that data in storage is the same as will be in the upgraders
+data modify block 998 162 1105 Items set from storage minecraft:upgrader Yellow
+data modify storage minecraft:upgrader Yellow set from block 998 162 1105 Items
+
+data modify block 998 162 1105 Items set from storage minecraft:upgrader Blue
+data modify storage minecraft:upgrader Blue set from block 998 162 1105 Items
+
+data modify block 998 162 1105 Items set value []
 
 # If enabled, change shulker HP to numbers, instead of hearts
 execute if score #NumericalShulkerHP settings matches 1 run data modify storage game:lang Shulker.Health set value ['[{"text":"1","color":"red","bold":true},{"text":"/","color":"gray"},{"text":"7","color":"green"}]', '[{"text":"2","color":"red","bold":true},{"text":"/","color":"gray"},{"text":"7","color":"green"}]', '[{"text":"3","color":"yellow","bold":true},{"text":"/","color":"gray"},{"text":"7","color":"green"}]', '[{"text":"4","color":"yellow","bold":true},{"text":"/","color":"gray"},{"text":"7","color":"green"}]', '[{"text":"5","color":"yellow","bold":true},{"text":"/","color":"gray"},{"text":"7","color":"green"}]', '[{"text":"6","color":"green","bold":true},{"text":"/","color":"gray"},{"text":"7","color":"green"}]', '[{"text":"7","color":"green","bold":true},{"text":"/","color":"gray"},{"text":"7","color":"green"}]']
@@ -44,9 +62,11 @@ execute if score #Difficulty settings matches 3 run difficulty hard
 # Resetting everything #
 ########################
 
+scoreboard players set #advanced_actionbar var 0
 scoreboard players set #MaxShulkerHealth settings 7
 scoreboard players set #KillHeight settings 13000
 scoreboard players set #MinFoodLevel settings 19
+scoreboard players set #shulker_hurt_delay settings 30
 
 scoreboard players add #Current GameID 1
 # Upgrades
@@ -88,6 +108,56 @@ function #controller:summon
 # Schedule functions
 function #controller:init_schedule
 
+# Prepare actionbar values
+## Yellow
+data modify storage game:lang Player.Actionbar.Yellow set value []
+## Souls
+data modify storage game:lang Player.Actionbar.Yellow append from storage game:lang Player.Actionbar.Souls.Yellow
+data modify storage game:lang Player.Actionbar.Yellow append from storage game:lang Player.Actionbar.Separator
+## Kills
+data modify storage game:lang Player.Actionbar.Yellow append from storage game:lang Player.Actionbar.Kills
+data modify storage game:lang Player.Actionbar.Yellow append from storage game:lang Player.Actionbar.Separator
+## Deaths
+data modify storage game:lang Player.Actionbar.Yellow append from storage game:lang Player.Actionbar.Deaths
+
+## Blue
+data modify storage game:lang Player.Actionbar.Blue set value []
+## Souls
+data modify storage game:lang Player.Actionbar.Blue append from storage game:lang Player.Actionbar.Souls.Blue
+data modify storage game:lang Player.Actionbar.Blue append from storage game:lang Player.Actionbar.Separator
+## Kills
+data modify storage game:lang Player.Actionbar.Blue append from storage game:lang Player.Actionbar.Kills
+data modify storage game:lang Player.Actionbar.Blue append from storage game:lang Player.Actionbar.Separator
+## Deaths
+data modify storage game:lang Player.Actionbar.Blue append from storage game:lang Player.Actionbar.Deaths
+
+## Spectators
+## Yellow base
+data modify storage game:lang Player.Actionbar.Spectator.Yellow set value []
+## Team name
+data modify storage game:lang Player.Actionbar.Spectator.Yellow append from storage game:lang Player.Actionbar.TeamName.Yellow
+## Souls
+data modify storage game:lang Player.Actionbar.Spectator.Yellow append from storage game:lang Player.Actionbar.Souls.Yellow
+data modify storage game:lang Player.Actionbar.Spectator.Yellow append from storage game:lang Player.Actionbar.Separator
+## Kills
+data modify storage game:lang Player.Actionbar.Spectator.Yellow append from storage game:lang Player.Actionbar.TotalKills.Yellow
+data modify storage game:lang Player.Actionbar.Spectator.Yellow append from storage game:lang Player.Actionbar.Separator
+## Deaths
+data modify storage game:lang Player.Actionbar.Spectator.Yellow append from storage game:lang Player.Actionbar.TotalDeaths.Yellow
+
+## Yellow base
+data modify storage game:lang Player.Actionbar.Spectator.Blue set value []
+## Team name
+data modify storage game:lang Player.Actionbar.Spectator.Blue append from storage game:lang Player.Actionbar.TeamName.Blue
+## Souls
+data modify storage game:lang Player.Actionbar.Spectator.Blue append from storage game:lang Player.Actionbar.Souls.Blue
+data modify storage game:lang Player.Actionbar.Spectator.Blue append from storage game:lang Player.Actionbar.Separator
+## Kills
+data modify storage game:lang Player.Actionbar.Spectator.Blue append from storage game:lang Player.Actionbar.TotalKills.Blue
+data modify storage game:lang Player.Actionbar.Spectator.Blue append from storage game:lang Player.Actionbar.Separator
+## Deaths
+data modify storage game:lang Player.Actionbar.Spectator.Blue append from storage game:lang Player.Actionbar.TotalDeaths.Blue
+
 # Init players
 execute as @a[tag=NeedInit] run function #controller:init_player
 
@@ -110,6 +180,9 @@ execute if score #Enabled Debug matches 1 run tellraw @a {"translate":"[Game] De
 team modify yellow nametagVisibility hideForOtherTeams
 team modify blue nametagVisibility hideForOtherTeams
 team modify player nametagVisibility never
+
+time set noon
+weather clear
 
 gamerule announceAdvancements false
 gamerule commandBlockOutput false

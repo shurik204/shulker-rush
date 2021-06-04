@@ -14,3 +14,5 @@ scoreboard players operation #tmp2 var = #yellow_team_score var
 scoreboard players operation #tmp2 var *= #tmp var
 # Nothing will change if bonus score = 0
 scoreboard players operation #yellow_team_score var += #tmp var
+
+execute if score #Enabled Debug matches 1.. run tellraw @a [{"text": "[Debug]: ","color": "yellow", "bold": true},{"text": "Yellow team final score is ","color": "white", "bold": false},{"score": {"name": "#yellow_team_score", "objective": "var"},"color": "white", "bold": false}]

@@ -1,3 +1,6 @@
+# Some hardcoding :)
+# I know about signs and storage but...
+
 data modify entity @s[scores={HP=7}] CustomName set from storage game:lang Shulker.Health[6]
 data modify entity @s[scores={HP=6}] CustomName set from storage game:lang Shulker.Health[5]
 data modify entity @s[scores={HP=5}] CustomName set from storage game:lang Shulker.Health[4]

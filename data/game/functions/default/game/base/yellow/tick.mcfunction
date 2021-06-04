@@ -1,0 +1,5 @@
+scoreboard players set #TotalKills yellow 0
+execute as @a[team=yellow] run scoreboard players operation #TotalKills yellow += @s killCount
+scoreboard players set #TotalDeath yellow 0
+execute as @a[team=yellow] run scoreboard players operation #TotalDeath yellow += @s deathCount
+execute as @a[team=player, distance=..15] run title @s actionbar [{"storage": "game:lang","nbt": "Player.Actionbar.Spectator.Yellow[0].text", "interpret": true},{"storage": "game:lang","nbt": "Player.Actionbar.Spectator.Yellow[1].text", "interpret": true},{"storage": "game:lang","nbt": "Player.Actionbar.Spectator.Yellow[2].text", "interpret": true},{"storage": "game:lang","nbt": "Player.Actionbar.Spectator.Yellow[3].text", "interpret": true},{"storage": "game:lang","nbt": "Player.Actionbar.Spectator.Yellow[4].text", "interpret": true},{"storage": "game:lang","nbt": "Player.Actionbar.Spectator.Yellow[5].text", "interpret": true},{"storage": "game:lang","nbt": "Player.Actionbar.Spectator.Yellow[6].text", "interpret": true},{"storage": "game:lang","nbt": "Player.Actionbar.Spectator.Yellow[7].text", "interpret": true}]

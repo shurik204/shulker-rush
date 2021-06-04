@@ -29,3 +29,6 @@ execute as @e[type=minecraft:falling_block] run data modify entity @s Time set v
 # BUG: Client console always shows "Told to remove advancement game:shoot_with_arrow but I don't know what that is"
 # I'll maybe fix it, or maybe not.
 advancement revoke @a[advancements={game:shoot_with_arrow=true}] only game:shoot_with_arrow
+
+# Base tick function
+execute as @e[type=minecraft:area_effect_cloud, tag=Base, limit=2] at @s run function #game:base/tick

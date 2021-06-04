@@ -1,0 +1,11 @@
+{
+    "parent": "game:root",
+    "criteria": {
+        "block": {
+            "trigger": "minecraft:placed_block"
+        }
+    },
+    "rewards": {
+        "function": "game:default/game/filler/block_placed"
+    }
+}

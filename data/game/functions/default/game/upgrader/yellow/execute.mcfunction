@@ -1,5 +1,3 @@
-execute as @a[team=yellow,distance=..5] run function #game:upgrader/yellow/buy
+execute store success score #process_upgrader yellow run data modify block ~ ~ ~ Items set from storage minecraft:upgrader Yellow
 
-execute as @a[team=blue,distance=..5] run function #game:upgrader/clear
-
-kill @e[type=minecraft:item,distance=..5,nbt={Item:{tag:{Up: true}}}]
+execute if score #process_upgrader yellow matches 1 run function #game:upgrader/yellow/process

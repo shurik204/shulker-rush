@@ -3,10 +3,5 @@
         "tick": {
             "trigger": "minecraft:tick"
         }
-    },
-    "requirements": [
-        [
-            "tick"
-        ]
-    ]
+    }
 }

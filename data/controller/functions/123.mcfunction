@@ -1,0 +1,30 @@
+player test1 spawn
+player test2 spawn
+player test3 spawn
+player test4 spawn
+player test5 spawn
+player test6 spawn
+player test7 spawn
+player test8 spawn
+player test9 spawn
+
+player test10 spawn
+player test11 spawn
+player test12 spawn
+player test13 spawn
+player test14 spawn
+player test15 spawn
+player test16 spawn
+player test17 spawn
+player test18 spawn
+player test19 spawn
+
+player test20 spawn
+player test21 spawn
+player test22 spawn
+player test23 spawn
+player test24 spawn
+player test25 spawn
+player test26 spawn
+player test27 spawn
+player test28 spawn

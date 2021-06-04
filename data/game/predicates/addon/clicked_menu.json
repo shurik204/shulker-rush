@@ -1,0 +1,27 @@
+{
+    "condition": "minecraft:alternative",
+    "terms": [
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+                "enable_addon":
+                {
+                    "min": 1,
+                    "max": 1000
+                }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+                "enable_addon":
+                {
+                    "min": -1000,
+                    "max": -1
+                }
+            }
+        }
+    ]
+}

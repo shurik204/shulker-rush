@@ -4,27 +4,27 @@
 ######################
 # Shulker objectives #
 ######################
-scoreboard objectives add dealtDamage minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add HurtTime dummy
 scoreboard objectives add HP dummy
 
 ################
 # Create teams #
 ################
-team add yellow {"text":"Yellow","color":"yellow"}
 team add blue {"text":"Blue","color":"aqua"}
-team modify yellow collisionRule pushOtherTeams
-team modify blue collisionRule pushOtherTeams
-team modify yellow deathMessageVisibility never
+team modify blue collisionRule pushOwnTeam
 team modify blue deathMessageVisibility never
-team modify yellow color yellow
 team modify blue color aqua
-team modify yellow friendlyFire false
 team modify blue friendlyFire false
-team modify yellow nametagVisibility hideForOtherTeams
 team modify blue nametagVisibility hideForOtherTeams
-team modify yellow seeFriendlyInvisibles true
 team modify blue seeFriendlyInvisibles true
+
+team add yellow {"text":"Yellow","color":"yellow"}
+team modify yellow collisionRule pushOwnTeam
+team modify yellow deathMessageVisibility never
+team modify yellow color yellow
+team modify yellow friendlyFire false
+team modify yellow nametagVisibility hideForOtherTeams
+team modify yellow seeFriendlyInvisibles true
 
 team add player {"text":"Spectators","color":"gray"}
 team modify player nametagVisibility always
@@ -68,6 +68,8 @@ scoreboard objectives add placePlanks minecraft.used:minecraft.oak_planks
 scoreboard objectives add placeEndStone minecraft.used:minecraft.end_stone
 scoreboard objectives add placeObsidian minecraft.used:minecraft.obsidian
 
+scoreboard objectives add summon_marker dummy
+
 scoreboard objectives add ArmorType dummy
 scoreboard objectives add swordLvl dummy
 scoreboard objectives add armorLvl dummy
@@ -94,12 +96,18 @@ scoreboard objectives add WeaponLVL dummy
 scoreboard objectives add Timer dummy
 
 # Addon support
-# Removed (At least for now)
-# scoreboard objectives add addon_state dummy
+scoreboard objectives add addon dummy
+## Menu controls
+scoreboard objectives add enable_addon trigger
+scoreboard objectives add close_menu trigger
+scoreboard objectives add addon_menu trigger
+
+# Settings menu
+scoreboard objectives add menu trigger
+scoreboard objectives add menu_page dummy
 
 # Debug variables
 scoreboard objectives add Debug dummy
-# scoreboard objectives add debug_item_limit dummy
 
 ################
 # Finishing up #
@@ -108,13 +116,15 @@ scoreboard objectives add Debug dummy
 setworldspawn 997 181 1200
 
 data modify storage minecraft:info MinecraftVersion set value "1.16"
-execute unless entity @a run say Shulker Rush Classic version 1.3 loaded!
-execute if entity @a run tellraw @a[tag=Dev] "[Game] Reload complete"
+execute unless entity @a run say Shulker Rush Classic version 1.4 loaded!
+tellraw @a[tag=Dev] "[Game] Reload complete"
+execute as @a[tag=update_list] run function #game:addon/tellraw
 
-scoreboard players set #ShulkerRushClassic var 74437
-# Old versions - no score
-# 1.15.2 (Version 1.2) - 73456
-# 1.16 (Version 1.3) - 74437
+scoreboard players set #ShulkerRushClassic var 1164040
+scoreboard players set #CodeVariant var 2
+# 1163 - mc version 1.16.3
+# 032 - map version 1.3.2
+# CodeVariant - this variable will increase in case of some breaking changes
 
 #Final changes to map 1.2 version
 worldborder center 995 1085
@@ -122,6 +132,4 @@ worldborder set 400 0
 worldborder warning distance 0
 worldborder warning time 0
 
-scoreboard players set #Dev var 0
-# Created by shurik204 | Texar Team
-# Code version 1.3.1
+function #game:on_load

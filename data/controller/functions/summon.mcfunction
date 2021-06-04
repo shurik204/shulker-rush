@@ -43,7 +43,10 @@ summon minecraft:area_effect_cloud 948.5 179.5 1078.5 {Age: -2147483648, Duratio
 summon minecraft:area_effect_cloud 1046.5 179.5 1078.5 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["Respawn","bRespawn","game"]}
 
 summon minecraft:shulker 960 178 1092 {NoAI:1b,Color:4b,CustomNameVisible:0b,CustomName:"",Tags:["Bed","yBed","game"]}
-summon minecraft:shulker 1034 178 1092 {NoAI:1b,Color:9b,CustomNameVisible:0b,CustomName:"",Tags:["Bed","bBed","game"]}
+summon minecraft:shulker 1034 178 1092 {NoAI:1b,Color:3b,CustomNameVisible:0b,CustomName:"",Tags:["Bed","bBed","game"]}
+
+summon minecraft:area_effect_cloud 954.50 180.00 1085.50 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["Base", "yBase", "game"]}
+summon minecraft:area_effect_cloud 1040.50 180.00 1085.50 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["Base", "bBase", "game"]}
 
 execute as @e[type=shulker,tag=Bed] run scoreboard players operation @s HP = #MaxShulkerHealth settings
 execute as @e[type=minecraft:shulker,tag=Bed] run function #game:shulker/update_name

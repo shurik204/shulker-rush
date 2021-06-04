@@ -1,15 +1,7 @@
-execute at @s if entity @a[gamemode=!spectator,distance=..2] run function #game:shulker/movement/move
+function #game:shulker/movement/move
 
-execute if score #Effects blue matches 1.. run effect give @a[distance=..6,team=yellow] minecraft:mining_fatigue 3 0 false
+function #game:shulker/effects/blue
 
-# Regeneration workaround using timer
-scoreboard players add @s Timer 1
-execute if score #Effects blue matches 2.. if score @s Timer matches 5.. run effect give @a[distance=..6,team=blue] minecraft:regeneration 2 1 false
-execute if score @s Timer matches 5.. run scoreboard players set @s Timer 0
+function #game:shulker/hurt_detect/blue
 
-execute if score #Effects blue matches 3.. run effect give @a[distance=..18,team=yellow] minecraft:glowing 3 0 false
-
-data modify entity @s Health set value 30.0f
-execute store result score @s HurtTime run data get entity @s HurtTime
-
-execute if score @s HurtTime matches 1.. if entity @a[distance=..5,team=yellow,scores={dealtDamage=10..}] run function #game:shulker/remove_hp_blue
+function #game:shulker/particles/blue

@@ -1,0 +1,13 @@
+{
+    "parent": "game:root",
+    "criteria": {
+        "hit_shulker": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:shulker"
+                }
+            }
+        }
+    }
+}

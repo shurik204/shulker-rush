@@ -1,9 +1,9 @@
 # DHP storage definition
 #define storage game:lang Language
 
-######################################################
-# Russian translation for Shulker Rush Classic 1.3.2 #
-######################################################
+####################################################
+# Russian translation for Shulker Rush Classic 1.4 #
+####################################################
 
 # Default lang (English): 0
 #> Russian lang ID: 1
@@ -20,8 +20,8 @@ data modify storage game:lang Shulker.Destroyed.Yellow set value '{"text":"Ша�
 data modify storage game:lang Shulker.Destroyed.Blue set value '{"text":"Шалкер синих уничтожен","color":"green"}'
 
 # Generic
-data modify storage game:lang Game.WelcomeMsg set value '[{"text":"\\nПриветствую на ","color":"gold"},{"text":"Shulker Rush Classic!","color":"gold","bold":true},{"text":"\\n\\nНажми ","color":"gray"},{"text":"[тут]","color":"gray","italic":true,"hoverEvent":{"action":"show_text","value":"Клик"},"clickEvent":{"action":"open_url","value":"https://docs.google.com/document/d/1MQIcemSSnh1fgDQjf9-ZKyYbMC7HR4z-sgQxQzNYKzk/edit?usp=sharing"}},{"text":" чтобы ознакомиться с правилами \\nи информацией про обновления!\\n\\nP.S: Ещё там есть список аддонов для этой игры и как ими управлять.\\n","color":"gray"}]'
-data modify storage game:lang Game.JoinGameMsg set value '[{"text":"Нажми ","color":"gray"},{"text":"[тут]","clickEvent":{"action":"run_command","value":"/trigger join set 180420"},"italic":true},{"text":" чтобы присоединится к игре.","italic":false}]'
+data modify storage game:lang Game.WelcomeMsg set value '[{"text":"\\nПриветствую на ","color":"gold"},{"text":"Shulker Rush Classic!","color":"gold","bold":true},{"text":"\\n\\nНажми ","color":"gray"},{"text":"[тут]","color":"gold","italic":true,"hoverEvent":{"action":"show_text","value":"Клик"},"clickEvent":{"action":"open_url","value":"https://docs.google.com/document/d/1MQIcemSSnh1fgDQjf9-ZKyYbMC7HR4z-sgQxQzNYKzk/edit?usp=sharing"}},{"text":" чтобы ознакомиться с правилами \\nи информацией про обновления!\\n\\nP.S: Ещё там есть список аддонов для этой игры и как ими управлять.\\nP.S: добавлен новый режим (аддон) Джаггернаут. Удачи. :)","color":"gray"}]'
+data modify storage game:lang Game.JoinGameMsg set value '[{"text":"Нажми ","color":"gray"},{"text":"[тут]","color":"gold","clickEvent":{"action":"run_command","value":"/trigger join set 180420"},"italic":true},{"text":" чтобы присоединится к игре.","color":"gray","italic":false}]'
 data modify storage game:lang Game.GetSoul set value '{"text":"+1 [✦] Душа ","color":"aqua"}'
 data modify storage game:lang Game.AlreadyStarted set value '{"text":"Игра уже идёт, ты наблюдатель","color":"gray"}'
 data modify storage game:lang Game.CantJoin set value '{"text":"Ты не можешь присоединится к этой игре так как Шалкеры обоих команд были уничтожены.","color":"red"}'
@@ -35,7 +35,7 @@ data modify storage game:lang Controller.NoTeam set value '{"text":"Некото
 data modify storage game:lang Controller.Countdown.Title set value '{"text":"Shulker Rush Classic","color":"light_purple"}'
 data modify storage game:lang Controller.Countdown.Subtitle set value '[{"text":"Начало игры через ","color":"yellow"},{"score":{"name":"#Countdown","objective":"var"}}]'
 data modify storage game:lang Controller.Countdown.StartedSubtitle set value '{"text":"Игра началась!","color":"yellow"}'
-#№ Win texts
+## Win texts
 data modify storage game:lang Controller.Win.Yellow set value '{"text":"Жёлтые победили!","color":"yellow","bold":false}'
 data modify storage game:lang Controller.Win.Blue set value '{"text":"Синие победили!","color":"aqua","bold":false}'
 
@@ -50,7 +50,7 @@ data modify storage game:lang Player.ShotPlayer set value '[{"selector":"@a[scor
 data modify storage game:lang Player.VoidDeathByPlayer set value '[{"selector":"@a[tag=KilledByVoid,limit=1]"},{"text":" был сброшен в пустоту игроком ","color":"gray"},{"selector":"@s"}]'
 data modify storage game:lang Player.VoidDeath set value '[{"selector":"@s"},{"text":" выпал из мира","color":"gray"}]'
 data modify storage game:lang Player.Rejoined set value '{"text":"Ты перезашёл в игру","color":"gray"}'
-data modify storage game:lang Player.UsedPotion set value '[{"selector":"@s"},{"text":" взорвался","color":"gold"}]'
+data modify storage game:lang Player.UsedPotion set value '[{"selector":"@s"},{"text":" взорвался","color":"gray"}]'
 data modify storage game:lang Player.Eleminated set value '[{"selector":"@s"},{"text":" выбыл из игры","color":"red"}]'
 
 # Player actionbar

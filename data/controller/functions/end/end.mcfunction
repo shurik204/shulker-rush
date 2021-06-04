@@ -22,8 +22,8 @@ team remove blue
 team remove player
 team add yellow {"text":"Yellow","color":"yellow"}
 team add blue {"text":"Blue","color":"aqua"}
-team modify yellow collisionRule pushOtherTeams
-team modify blue collisionRule pushOtherTeams
+team modify yellow collisionRule pushOwnTeam
+team modify blue collisionRule pushOwnTeam
 team modify yellow deathMessageVisibility never
 team modify blue deathMessageVisibility never
 team modify yellow color yellow
@@ -66,6 +66,9 @@ scoreboard players set #Enabled Debug 0
 scoreboard players set @a drinkPotion 0
 # Set team to "player" for all players
 team join player @a
+
+scoreboard players reset * addon_menu
+scoreboard players reset * enable_addon
 
 # Clear functions schedule
 schedule clear #game:block_drops_schedule
@@ -112,12 +115,14 @@ data modify block 994 180 1152 Text4 set from storage game:lang Lobby.RightClick
 data modify block 997 180 1140 Text1 set from storage game:lang Lobby.StartSign[0]
 data modify block 997 180 1140 Text2 set from storage game:lang Lobby.StartSign[1]
 
-# Add tag to teams "chars'"
+tag @a remove update_list
+
+# Add tag to teams "chars"
 tag @e[type=minecraft:armor_stand,tag=charYellow] add TeamChar
 tag @e[type=minecraft:armor_stand,tag=charBlue] add TeamChar
 
 
 # Update info on the sign
-data modify block 1002 180 1156 Text1 set value '{"text":"Map version: 1.3"}'
-data modify block 1002 180 1156 Text3 set value '{"text":"05.07.20"}'
-data modify block 1002 180 1156 Text4 set value '{"text":"Code ver: 1.3.1"}'
+data modify block 1002 180 1156 Text1 set value '{"text":"Map version: 1.4"}'
+data modify block 1002 180 1156 Text3 set value '{"text":"25.11.20"}'
+data modify block 1002 180 1156 Text4 set value '{"text":"Code ver: 1.4"}'
